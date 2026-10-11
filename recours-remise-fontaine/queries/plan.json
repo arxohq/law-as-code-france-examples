@@ -1,0 +1,27 @@
+[
+  {
+    "case": "FontaineRemise",
+    "file": "FontaineRemise-remise-receipt.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "FontaineRemise",
+    "file": "FontaineRemise-remise-decision.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "FontaineRemise",
+    "file": "FontaineRemise-positions.json",
+    "truth": null
+  },
+  {
+    "case": "FontaineRemise",
+    "file": "FontaineRemise-benefit-af.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "FontaineRemise",
+    "file": "FontaineRemise-recovery-suspension.json",
+    "truth": "TRUE_ONLY"
+  }
+]

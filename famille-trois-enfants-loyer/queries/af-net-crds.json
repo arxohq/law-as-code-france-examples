@@ -1,0 +1,23 @@
+{
+  "queryId": "af-net-crds",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:prestations-versement#montant_net_crds_af",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:garnier:nadia"
+      },
+      {
+        "currency": "EUR",
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "423.44215"
+      }
+    ]
+  }
+}

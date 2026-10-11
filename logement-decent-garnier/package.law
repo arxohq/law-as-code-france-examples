@@ -1,0 +1,18 @@
+language "law.core" version "0.2";
+package examples.fr.apl.logement_decent_garnier version "0.1.0";
+namespace "urn:law:examples:fr:apl:logement-decent-garnier";
+
+import fr.apl version "0.1.0";
+import fr.pf.cmg version "0.1.0";
+
+// ПРИСТОЙНОСТЬ ЖИЛЬЯ: РЕШАЕТ ОРГАН. Вымышленная семья Garnier (не реальные люди)
+// из дела fr/prestations-versement/examples/famille-trois-enfants-loyer: наём дома
+// из пяти комнат в зоне II за 1 320 € в месяц у частного владельца с 14 марта
+// 2026 года, заявление на ALF 20 марта. L. 822-9 CCH требует пристойного жилья;
+// оценку даёт орган-плательщик (канал суждения fr.apl::logement_decent, authority
+// OrganismePayeur). Дела: DecenceEnAttente — ответа органа нет; DecenceReconnue —
+// орган признал жильё пристойным (adjudicated); NonDecenceConstatee — орган
+// 28 апреля 2026 года признал жильё непристойным: тот же акт подан ответом на
+// суждение (отрицательно) и датированной констатацией L. 843-1, которая включает
+// консервацию пособия. Политика сроков fr.pf.cmg::CMG_MOIS_CALENDAIRE — та же, что
+// в деле Garnier (непубличная fr.apl::APL_MOIS_CIVIL той же формы). Норм здесь нет.

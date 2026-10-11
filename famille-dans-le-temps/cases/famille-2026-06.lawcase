@@ -1,0 +1,29 @@
+language "law.core" version "0.2";
+package fr.case.famille_dans_le_temps version "0.1.0";
+namespace "urn:fr:case:clir:famille-dans-le-temps";
+
+// JUNE 2026. PA thread (fourth cascade stage): the served quarterly
+// amount stated 280.00 EUR (owner chain: resources include paid RSA
+// nets per the D-26 contract — see sources/WITNESS.md); own PA indu
+// 150.00 EUR recoverable, RSA indu 60.00 EUR carried onto it
+// (L. 262-46 al. 4), fund-stated rate 0.25, no fraud.
+
+case Famille2026_06 {
+    context {
+        legal_time @2026-06-15;
+        decision_time @2026-06-15T12:00:00+02:00;
+        knowledge_time @2026-06-15T12:00:00+02:00;
+        timezone "Europe/Paris";
+    }
+    const camille_pa: fr.css.prime_activite::Demandeur =
+        entity_ref("urn:fr:case:famille:camille-pa");
+
+    assert "pa-due": fr.css.prime_activite::prime_due_trimestre(entity_ref("urn:fr:case:famille:camille-pa"), 280.00 EUR)
+        { origin case_input; }
+    assert "pa-indu": fr.css.prime_activite::indu_recupere(entity_ref("urn:fr:case:famille:camille-pa"), 150.00 EUR)
+        { origin case_input; }
+    assert "pa-report": fr.prestations.versement::rsa_indu_reporte_sur_pa(entity_ref("urn:fr:case:famille:camille-pa"), 60.00 EUR)
+        { origin case_input; }
+    assert "pa-taux": fr.prestations.versement::retenue_trimestrielle_pa_declaree(entity_ref("urn:fr:case:famille:camille-pa"), 70.00 EUR) { origin case_input; }
+    assert "pa-taux-licite-0": fr.prestations.versement::report_rsa_sur_pa_licite(entity_ref("urn:fr:case:famille:camille-pa")) { origin case_input; }
+}

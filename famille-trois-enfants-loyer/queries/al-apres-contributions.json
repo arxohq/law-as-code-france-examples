@@ -1,0 +1,23 @@
+{
+  "queryId": "al-apres-contributions",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:apl#aide_apres_contributions",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:garnier:menage"
+      },
+      {
+        "currency": "EUR",
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "189.95295"
+      }
+    ]
+  }
+}

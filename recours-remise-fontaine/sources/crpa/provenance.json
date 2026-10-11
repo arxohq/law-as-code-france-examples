@@ -1,0 +1,7 @@
+{
+  "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000034195881",
+  "retrieved": "2026-10-11",
+  "method": "web tool article text extraction, manually transcribed and compared; direct urllib fetch403; no raw HTML snapshot claimed",
+  "textSha256": "353cfcd2c4f3341a6f08c12999e6271e5edac7736cb983c362e7a619ad9c8e22",
+  "scope": "editorial source for lesson13, not an executed rule"
+}

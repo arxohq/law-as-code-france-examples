@@ -1,0 +1,19 @@
+{
+  "queryId": "pourquoi-droit",
+  "kind": "why_not",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:pf-paje#droit_prime_naissance",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:moreau:menage"
+      },
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:moreau:enfant"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+[package]
+name = "examples.fr.prime_activite.recours_indu_cra"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:fr:prime-activite:recours-indu-cra"
+
+[dependencies]
+"fr.css.prime_activite" = "0.1.0"
+
+[[cases]]
+name = "AppelPendant"
+path = "cases/AppelPendant.lawcase"
+
+[[cases]]
+name = "SansAppel"
+path = "cases/SansAppel.lawcase"
+
+[[cases]]
+name = "DossierDivergent"
+path = "cases/DossierDivergent.lawcase"
+
+[[tests]]
+family = "examples.fr.prime_activite.recours_indu_cra#draft"
+regression = false
+suites = ["tests/draft.lawtest"]
+world = ["examples.fr.prime_activite.recours_indu_cra", "fr.css.prime_activite"]
+
+[metadata]
+act = "fr-prime-activite-examples-recours-indu-cra"
+
+[authoring]
+local_imports = "explicit"

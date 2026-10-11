@@ -1,0 +1,30 @@
+# Пакет-дело §168.4: одно вымышленное дело logement-foyer — пара в
+# конвенционированной résidence autonomie, APL, март 2026 года. Вопрос —
+# коэффициент K статьи D. 832-25, формула которого в Légifrance опубликована
+# картинкой и читается каноном по отменённым R. 351-61 и R. 351-61-1, и итог
+# пособия. Норм нет: правила, чтение K и барем — у fr.apl.
+[package]
+name = "examples.fr.apl.foyer_coefficient_k"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:fr:apl:foyer-coefficient-k"
+
+[dependencies]
+"fr.apl" = "0.1.0"
+
+[[cases]]
+name = "CoupleResidenceAutonomie"
+path = "cases/couple-residence-autonomie.lawcase"
+
+# Двойник §267 вопросов check.py (те же факты и ожидания).
+[[tests]]
+family = "examples.fr.apl.foyer_coefficient_k#cas"
+regression = false
+suites = ["tests/foyer-coefficient-k.lawtest"]
+world = ["examples.fr.apl.foyer_coefficient_k", "fr.apl"]
+
+[metadata]
+act = "fr-apl-examples-foyer-coefficient-k"
+
+[authoring]
+local_imports = "explicit"

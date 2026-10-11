@@ -1,0 +1,32 @@
+[
+  {
+    "case": "AppelPendant",
+    "file": "AppelPendant-cra-appelpendant.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "AppelPendant",
+    "file": "AppelPendant-argumentation.json",
+    "truth": null
+  },
+  {
+    "case": "SansAppel",
+    "file": "SansAppel-cra-sansappel.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "SansAppel",
+    "file": "SansAppel-argumentation.json",
+    "truth": null
+  },
+  {
+    "case": "DossierDivergent",
+    "file": "DossierDivergent-truth.json",
+    "truth": "FALSE_ONLY"
+  },
+  {
+    "case": "DossierDivergent",
+    "file": "DossierDivergent-argumentation.json",
+    "truth": null
+  }
+]

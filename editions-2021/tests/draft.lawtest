@@ -1,0 +1,21 @@
+language "law.core" version "0.2";
+package examples.fr.apl.editions_2021 version "0.1.0";
+namespace "urn:law:examples:fr:apl:editions-2021";
+
+// Proposed test twins, not executed under the current French blocker.
+
+test "resources-tenantdecembre" {
+    given case TenantDecembre;
+    evaluate truth(fr.apl::ressources_retenues(entity_ref("urn:law:examples:fr:cnaf:tenant"), 12000 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+}
+
+test "resources-tenantjanvier" {
+    given case TenantJanvier;
+    evaluate truth(fr.apl::ressources_retenues(entity_ref("urn:law:examples:fr:cnaf:tenant"), 16200 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+}

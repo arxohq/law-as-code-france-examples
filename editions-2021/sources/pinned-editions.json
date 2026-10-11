@@ -1,0 +1,21 @@
+{
+  "schema": "cnaf.pinned-editions/1",
+  "sources": [
+    {
+      "path": "corpus/laws/fr/apl/sources/fr-apl/legi/cch-section2/LEGIARTI000038878997.xml",
+      "sha256": "b18e82721e79476bd70082c5c86a7c2be3687bf6292aee2df60bd55ea1af0f57",
+      "article": "R.822-3",
+      "quote": "L'année civile de référence est l'avant-dernière année précédant la période de paiement.",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038878997/2019-09-01",
+      "legalTime": "2020-12-01"
+    },
+    {
+      "path": "corpus/laws/fr/apl/sources/fr-apl/legi/cch-section2/LEGIARTI000041419142.xml",
+      "sha256": "4dcad874cbdca2fa93a91f430c2c977b27f7908ca4578d6af3e7ac0334e4cf45",
+      "article": "R.822-3",
+      "quote": "sur une période de référence courant du treizième au deuxième mois précédant la date d'ouverture ou de réexamen du droit à l'aide personnelle au logement",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041419142/2021-01-01/",
+      "legalTime": "2021-01-01"
+    }
+  ]
+}

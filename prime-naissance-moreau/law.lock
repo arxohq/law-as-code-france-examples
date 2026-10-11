@@ -1,0 +1,37 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.fr.pf.paje.prime_naissance_moreau",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.pf.paje"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [
+    {
+      "artifactHash": "sha256:8bb0e8f41b65e77b8f2993f0409895eacc549f6cb57a5a09166813a23ed20187",
+      "features": [
+        "core-executable",
+        "law.params/0.1"
+      ],
+      "name": "fr.pf.paje",
+      "namespace": "urn:fr:corpus:clir:pf-paje",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.pf.paje/0.1.0",
+      "sourceHash": "sha256:260354bd60c71d57f38ccba40a347719329a2c915b3fe857414aeaf33ed34a25",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:d1bd2aac8d727f147f146a8364ebffe9b025889d54b203e1b8d9ebf3b3f89397",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:25dcacb8d7d39cffb27c79f41fb7dfca196423821744a3958eb4295d4bc44d83",
+    "name": "examples.fr.pf.paje.prime_naissance_moreau",
+    "namespace": "urn:law:examples:fr:pf:paje:prime-naissance-moreau",
+    "sourceHash": "sha256:fa5c70ed8891f959a0ee0caaad5181658eb882872801f942dd81e1407dadee90",
+    "version": "0.1.0"
+  }
+}

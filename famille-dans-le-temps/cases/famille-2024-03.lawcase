@@ -1,0 +1,27 @@
+language "law.core" version "0.2";
+package fr.case.famille_dans_le_temps version "0.1.0";
+namespace "urn:fr:case:clir:famille-dans-le-temps";
+
+// MARCH 2024. Two children in care (Lina 5, Yanis 2). AF brut for
+// March stated 200.00 EUR (owner chain); housing net stated 344.00 EUR
+// (fr.apl.versement chain, read-only here). No debts.
+
+case Famille2024_03 {
+    context {
+        legal_time @2024-03-15;
+        decision_time @2024-03-15T12:00:00+01:00;
+        knowledge_time @2024-03-15T12:00:00+01:00;
+        timezone "Europe/Paris";
+    }
+    const camille: fr.pf.core::Personne =
+        entity_ref("urn:fr:case:famille:camille");
+    const menage: fr.apl::Menage =
+        entity_ref("urn:fr:case:famille:menage");
+
+    assert "af-brut": fr.pf.af::af_montant_du(entity_ref("urn:fr:case:famille:camille"), 200.00 EUR)
+        { origin case_input; }
+    assert "al-net": fr.apl.versement::montant_verse(entity_ref("urn:fr:case:famille:menage"), 344.00 EUR)
+        { origin case_input; }
+    assert "org": fr.pf.core::organisme_debiteur_pf(entity_ref("urn:fr:case:famille:caisse"), entity_ref("urn:fr:case:famille:camille"))
+        { origin case_input; }
+}

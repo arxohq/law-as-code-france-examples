@@ -1,0 +1,32 @@
+[package]
+name = "examples.fr.pf.paje.prime_naissance_moreau"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:fr:pf:paje:prime-naissance-moreau"
+
+[dependencies]
+"fr.pf.paje" = "0.1.0"
+
+[authoring]
+local_imports = "explicit"
+
+[[cases]]
+name = "PlafondEgal"
+path = "cases/PlafondEgal.lawcase"
+
+[[cases]]
+name = "PlafondDepasse"
+path = "cases/PlafondDepasse.lawcase"
+
+[[cases]]
+name = "RessourcesAbsentes"
+path = "cases/RessourcesAbsentes.lawcase"
+
+[[tests]]
+family = "examples.fr.pf.paje.prime_naissance_moreau#cas"
+regression = false
+suites = ["tests/prime-naissance.lawtest"]
+world = ["examples.fr.pf.paje.prime_naissance_moreau", "fr.pf.paje"]
+
+[metadata]
+act = "fr-pf-paje-examples-prime-naissance-moreau"

@@ -1,0 +1,13 @@
+language "law.core" version "0.2";
+package examples.fr.apl.douzieme_sans_arrondi version "0.1.0";
+namespace "urn:law:examples:fr:apl:douzieme-sans-arrondi";
+
+import fr.apl version "0.1.0";
+
+// ДЕЛЕНИЕ, ОБ ОКРУГЛЕНИИ КОТОРОГО ТЕКСТ МОЛЧИТ. Вымышленный жилец (не реальный
+// человек) конвенционированного logement-foyer общего типа в зоне II: один,
+// без иждивенцев, redevance 430 € в месяц, ресурсы 9 600 € в год, март 2026
+// года. D. 832-26 велит «le total étant divisé par douze»; здесь сумма транш с
+// форфейтом равна 1 977,17096 €, и её двенадцатая доля — 164,7642466… €,
+// бесконечная дробь. Дело ResidentSansLecture задаёт вопрос без прочтения,
+// ResidentLectureD82 — с выбранным прочтением D-82. Норм здесь нет.

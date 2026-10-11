@@ -1,0 +1,58 @@
+// Двойник §267 вопросов check.py: те же факты, что у дела CoupleResidenceAutonomie,
+// те же вопросы и ожидания. Ожидания — ответ канона, сверенный с независимой
+// репликой на дробях (sources/WITNESS.md).
+language "law.core" version "0.2";
+package examples.fr.apl.foyer_coefficient_k version "0.1.0";
+namespace "urn:law:examples:fr:apl:foyer-coefficient-k";
+
+test "urn:query:examples-fr-apl-foyer-coefficient-k-couple" {
+    given {
+        context { legal_time @2026-03-10; decision_time @2026-03-10T12:00:00+01:00; knowledge_time @2026-03-10T12:00:00+01:00; timezone "Europe/Paris"; interpretation fr.apl::PpPlancherFinal; }
+        assert "secteur": fr.apl::secteur_logement_foyer(entity_ref("urn:law:examples:fr:apl:foyer-k:menage")) { origin case_input; }
+        assert "aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::APL) { origin case_input; }
+        assert "type-foyer": fr.apl::type_logement_foyer(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::GENERAL) { origin case_input; }
+        assert "zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 0) { origin case_input; }
+        assert "redevance": fr.apl::redevance(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 495.00 EUR) { origin case_input; }
+        assert "ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 12500.00 EUR) { origin case_input; }
+    }
+    // E0 = 2 617,50552 / 12 = 218,12546 € (частное конечно — прочтение D-82 не нужно).
+    evaluate truth(fr.apl::equivalence_loyer_minimale(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 218.12546 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(fr.apl::EquivalenceLoyerMinimale);
+    // K и N — значения Decimal: литерал Decimal в запросе .lawtest понижается в
+    // Number и с Decimal не сопоставляется (граница D-42 канона, E-0324 её не
+    // покрывает), поэтому K проверяется через Af: при E и E0 выше Af = K × 276,87454
+    // однозначно задаёт K; check.py дополнительно читает K и N из proof-графа.
+    // Af = 0,52 × (495 − 218,12546) = 143,9747608 €.
+    evaluate truth(fr.apl::aide_foyer_formule(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 143.9747608 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(fr.apl::AideFoyerFormuleAPL);
+    expect applied(fr.apl::CoefficientPriseEnChargeAPLGeneral);
+    expect applied(fr.apl::NombreParts);
+    // «Arrondi à deux décimales par défaut»: K = 0,5224 → 0,52; при 0,53 было бы
+    // Af = 0,53 × 276,87454 = 146,7435062 € — канон этого не выводит.
+    evaluate truth(fr.apl::aide_foyer_formule(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 146.7435062 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+    // −5 € (ст. 28) → 138,9747608; ⌊138,9747608 − 0,694873804⌋ + 0,694873804 = 138,694873804 €.
+    evaluate truth(fr.apl::aide_mensuelle(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 138.694873804 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(fr.apl::ContributionsSocialesFoyerAPL);
+    expect applied(fr.apl::AideFoyerVersee);
+    // После удержания CRDS 0,5 %: 138,694873804 × 0,995 = 138,00139943498 €.
+    evaluate truth(fr.apl::aide_nette_precompte_crds(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 138.00139943498 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(fr.apl::PrecompteCRDSMetropole);
+}

@@ -1,0 +1,23 @@
+{
+  "queryId": "cra-sansappel",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:ppa#indu_recupere",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:cnaf:cra:sansappel"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "600",
+        "currency": "EUR"
+      }
+    ]
+  }
+}

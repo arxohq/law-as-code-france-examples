@@ -1,0 +1,50 @@
+language "law.core" version "0.2";
+package fr.case.famille_dans_le_temps version "0.1.0";
+namespace "urn:fr:case:clir:famille-dans-le-temps";
+
+// MARCH 2026. Two threads. (1) A 2021 AF indu is time-barred
+// (action_prescrite stated by the caller from the pf-core chain):
+// the March echeance (brut stated 320.00 EUR) is paid in full.
+// (2) RSA thread (rs 05 live; recoverability imported): March RSA
+// allocation stated 600.00 EUR, no own recoverable indu (0 EUR),
+// PF indu 300.00 EUR carried onto it at the fund-stated rate 0.30.
+// PA: no thread in this snapshot — the PA checkpoint lives in
+// Famille2026_06 (June 2026) since the FINISH-W2 linkage.
+
+case Famille2026_03 {
+    context {
+        legal_time @2026-03-15;
+        decision_time @2026-03-15T12:00:00+01:00;
+        knowledge_time @2026-03-15T12:00:00+01:00;
+        timezone "Europe/Paris";
+    }
+    const camille: fr.pf.core::Personne =
+        entity_ref("urn:fr:case:famille:camille");
+    const camille_rsa: fr.minima.ressources::Personne =
+        entity_ref("urn:fr:case:famille:camille-rsa");
+
+    assert "af-brut": fr.pf.af::af_montant_du(entity_ref("urn:fr:case:famille:camille"), 320.00 EUR)
+        { origin case_input; }
+    assert "indu": fr.pf.core::indu_constate(entity_ref("urn:fr:case:famille:camille"), 250.00 EUR)
+        { origin case_input; }
+    assert "report": fr.prestations.versement::rsa_indu_reporte_sur_pf(entity_ref("urn:fr:case:famille:camille"), 0 EUR)
+        { origin case_input; }
+    assert "pa": fr.prestations.versement::pa_indu_reporte_sur_pf(entity_ref("urn:fr:case:famille:camille"), 0 EUR)
+        { origin case_input; }
+    assert "taux": fr.prestations.versement::prelevement_mensuel_declare(entity_ref("urn:fr:case:famille:camille"), 79.60 EUR) { origin case_input; }
+    assert "taux-licite-0": fr.prestations.versement::report_rsa_sur_pf_licite(entity_ref("urn:fr:case:famille:camille")) { origin case_input; }
+    assert "taux-licite-1": fr.prestations.versement::report_pa_sur_pf_licite(entity_ref("urn:fr:case:famille:camille")) { origin case_input; }
+    assert "presc": fr.pf.core::action_prescrite(entity_ref("urn:fr:case:famille:camille"))
+        { origin case_input; }
+    assert "rsa": fr.casf.rsa::allocation_mensuelle(entity_ref("urn:fr:case:famille:camille-rsa"), @2026-03-01, 600.00 EUR)
+        { origin case_input; }
+    assert "rsa-indu": fr.casf.rsa::indu_recouvrable(entity_ref("urn:fr:case:famille:camille-rsa"), 0 EUR)
+        { origin case_input; }
+    assert "rsa-report": fr.prestations.versement::pf_indu_reporte_sur_rsa(entity_ref("urn:fr:case:famille:camille-rsa"), 300.00 EUR)
+        { origin case_input; }
+    assert "rsa-pa": fr.prestations.versement::pa_indu_reporte_sur_rsa(entity_ref("urn:fr:case:famille:camille-rsa"), 0 EUR)
+        { origin case_input; }
+    assert "rsa-taux": fr.prestations.versement::retenue_mensuelle_rsa_declaree(entity_ref("urn:fr:case:famille:camille-rsa"), 180.00 EUR) { origin case_input; }
+    assert "rsa-taux-licite-0": fr.prestations.versement::report_pf_sur_rsa_licite(entity_ref("urn:fr:case:famille:camille-rsa")) { origin case_input; }
+    assert "rsa-taux-licite-1": fr.prestations.versement::report_pa_sur_rsa_licite(entity_ref("urn:fr:case:famille:camille-rsa")) { origin case_input; }
+}

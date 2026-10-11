@@ -1,0 +1,36 @@
+[package]
+name = "examples.fr.pf_af.cohorte_revalorisation"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:fr:pf-af:cohorte-revalorisation"
+
+[dependencies]
+"fr.pf.af" = "0.1.0"
+
+[[cases]]
+name = "Martin"
+path = "cases/Martin.lawcase"
+
+[[cases]]
+name = "Bernard"
+path = "cases/Bernard.lawcase"
+
+[[cases]]
+name = "Petit"
+path = "cases/Petit.lawcase"
+
+[[cases]]
+name = "Durand"
+path = "cases/Durand.lawcase"
+
+[[tests]]
+family = "examples.fr.pf_af.cohorte_revalorisation#draft"
+regression = false
+suites = ["tests/draft.lawtest"]
+world = ["examples.fr.pf_af.cohorte_revalorisation", "fr.pf.af"]
+
+[metadata]
+act = "fr-pf-af-examples-cohorte-revalorisation"
+
+[authoring]
+local_imports = "explicit"

@@ -1,0 +1,23 @@
+{
+  "queryId": "af-rec-2025-12",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:prestations-versement#net_verse_af",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:fr:case:famille:camille"
+      },
+      {
+        "currency": "EUR",
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "238.80"
+      }
+    ]
+  }
+}

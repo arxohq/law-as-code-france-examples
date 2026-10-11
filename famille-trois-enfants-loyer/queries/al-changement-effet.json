@@ -1,0 +1,22 @@
+{
+  "queryId": "al-changement-effet",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:apl#changement_prend_effet_le",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:garnier:menage"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Date"
+        },
+        "value": "2026-06-01"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "queryId": "af-bande-1",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:pf-af#bande_ressources",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:garnier:nadia"
+      },
+      {
+        "kind": "const_ref",
+        "id": "urn:fr:corpus:clir:pf-af#BANDE_1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+language "law.core" version "0.2";
+package examples.fr.pf.paje.prime_naissance_moreau version "0.1.0";
+namespace "urn:law:examples:fr:pf:paje:prime-naissance-moreau";
+
+case PlafondEgal {
+    context { legal_time @2025-07-15; decision_time @2025-07-15T12:00:00Z; knowledge_time @2025-07-15T12:00:00Z; timezone "Europe/Paris"; }
+    assert "grossesse": fr.pf.paje::attente_naissance(entity_ref("urn:law:examples:fr:moreau:menage"), entity_ref("urn:law:examples:fr:moreau:enfant")) { origin case_input; }
+    assert "base": fr.pf.paje::plafond_base_taux_plein(entity_ref("urn:law:examples:fr:moreau:menage"), 30000 EUR) { origin case_input; }
+    assert "bmaf": fr.pf.paje::bmaf_applicable(entity_ref("urn:law:examples:fr:moreau:menage"), 400 EUR) { origin case_input; }
+    assert "examen": fr.pf.paje::date_examen_situation(entity_ref("urn:law:examples:fr:moreau:menage"), entity_ref("urn:law:examples:fr:moreau:enfant"), @2025-07-01) { origin case_input; }
+    assert "ressources": fr.pf.paje::ressources_annuelles(entity_ref("urn:law:examples:fr:moreau:menage"), 35841.00 EUR) { origin case_input; }
+}

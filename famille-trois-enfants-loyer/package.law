@@ -1,0 +1,22 @@
+language "law.core" version "0.2";
+package examples.fr.prestations_versement.famille_trois_enfants_loyer version "0.1.0";
+namespace "urn:law:examples:fr:prestations-versement:famille-trois-enfants-loyer";
+
+import fr.prestations.versement version "0.1.0";
+import fr.pf.core version "0.1.0";
+import fr.pf.af version "0.1.0";
+import fr.apl version "0.1.0";
+import fr.pf.cmg version "0.1.0";
+
+// ОДНА СЕМЬЯ, ТРИ СНИМКА. Вымышленная семья (не реальные люди): Nadia Garnier
+// (allocataire) и Thomas Garnier, трое детей — Inès (03.11.2010), Hugo
+// (21.06.2015), Léa (09.02.2021). С 14 марта 2026 года семья снимает у частного
+// владельца дом из пяти комнат в зоне II за 1 320 € в месяц; ресурсы — 24 600 €
+// в год. Снимки: апрель 2026 года с названными прочтениями округления, тот же
+// апрель по одному тексту и май 2026 года, когда Thomas теряет работу и семья
+// просит пересмотра. Опубликованные суммы, которые каноны берут входом (BMAF и
+// плафоны D. 521-3, D-81), дело называет со ссылкой на закреплённые инструкции
+// DSS; остальные нормативные числа — барем канонов. Политика сроков
+// fr.pf.cmg::CMG_MOIS_CALENDAIRE — публичная политика той же формы, что
+// непубличная fr.apl::APL_MOIS_CIVIL (календарный месяц, без переноса).
+// Норм здесь нет.

@@ -1,0 +1,19 @@
+language "law.core" version "0.2";
+package examples.fr.pf_af.cohorte_revalorisation version "0.1.0";
+namespace "urn:law:examples:fr:pf-af:cohorte-revalorisation";
+
+case Petit {
+    context { legal_time @2026-04-15; decision_time @2026-04-15T12:00:00+01:00; knowledge_time @2026-04-15T12:00:00+01:00; timezone "Europe/Paris"; interpretation fr.pf.af::ArrondiLignesDss; }
+    assert "input-0": fr.pf.af::territoire(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), fr.pf.af::METROPOLE) { origin case_input; }
+    assert "input-1": fr.pf.af::nb_enfants_charge(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 4) { origin case_input; }
+    assert "input-2": fr.pf.af::ressources_menage(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 50000 EUR) { origin case_input; }
+    assert "input-3": fr.pf.af::plafond_base_tranche1_publie(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 66652 EUR) { origin case_input; }
+    assert "input-4": fr.pf.af::plafond_base_tranche2_publie(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 93276 EUR) { origin case_input; }
+    assert "input-5": fr.pf.af::majoration_plafond_enfant_publiee(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 6664 EUR) { origin case_input; }
+    assert "input-6": fr.pf.af::bmaf_retenu(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 478.16 EUR) { origin case_input; }
+    assert "input-7": fr.pf.af::nb_majorations_pleines(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 0) { origin case_input; }
+    assert "input-8": fr.pf.af::nb_majorations_demi(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 0) { origin case_input; }
+    assert "input-9": fr.pf.af::forfait_total_menage(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 0 EUR) { origin case_input; }
+    assert "input-10": fr.pf.af::nb_enfants_ase_service(entity_ref("urn:law:examples:fr:cnaf:cohort:petit"), 0) { origin case_input; }
+    assert "input-11": fr.pf.af::foyer_du_cas(entity_ref("urn:law:examples:fr:cnaf:cohort:petit")) { origin case_input; }
+}

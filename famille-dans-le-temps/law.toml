@@ -1,0 +1,53 @@
+# Model case: one household 2024-2026 across the payment stage.
+#
+# NO NORMS HERE AND THERE MUST BE NONE. Law stays with the acts; the case
+# holds only FACTS and saved QUESTIONS (U-08 pattern of the FLSA case).
+[package]
+name = "fr.case.famille_dans_le_temps"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:fr:case:clir:famille-dans-le-temps"
+
+[metadata]
+act = "fr-case-famille-dans-le-temps"
+title = "Case: famille dans le temps — one household 2024-2026 (AF, ARS, PAJE prime, AF indu recovery, prescription, RSA carry)"
+jurisdiction = "FR"
+instrument = "case"
+legalStatus = "in_force"
+verifiedAgainstSource = false
+
+[dependencies]
+"fr.prestations.versement" = "0.1.0"
+"fr.pf.core" = "0.1.0"
+"fr.pf.af" = "0.1.0"
+"fr.pf.ars" = "0.1.0"
+"fr.pf.paje" = "0.1.0"
+"fr.casf.rsa" = "0.1.0"
+"fr.minima.ressources" = "0.1.0"
+"fr.css.prime_activite" = "0.1.0"
+"fr.apl.versement" = "0.1.0"
+"fr.apl" = "0.1.0"
+
+[[cases]]
+name = "Famille2024_03"
+path = "cases/famille-2024-03.lawcase"
+
+[[cases]]
+name = "Famille2024_08"
+path = "cases/famille-2024-08.lawcase"
+
+[[cases]]
+name = "Famille2025_07"
+path = "cases/famille-2025-07.lawcase"
+
+[[cases]]
+name = "Famille2025_12"
+path = "cases/famille-2025-12.lawcase"
+
+[[cases]]
+name = "Famille2026_03"
+path = "cases/famille-2026-03.lawcase"
+
+[[cases]]
+name = "Famille2026_06"
+path = "cases/famille-2026-06.lawcase"

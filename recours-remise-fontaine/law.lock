@@ -1,0 +1,162 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.fr.apl.recours_remise_fontaine",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.apl"
+    },
+    {
+      "features": [],
+      "from": "examples.fr.apl.recours_remise_fontaine",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.css.prime_activite"
+    },
+    {
+      "features": [],
+      "from": "examples.fr.apl.recours_remise_fontaine",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.pf.af"
+    },
+    {
+      "features": [],
+      "from": "examples.fr.apl.recours_remise_fontaine",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "vocab.source_records"
+    },
+    {
+      "features": [],
+      "from": "fr.apl",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.tax.income_for_apl"
+    },
+    {
+      "features": [],
+      "from": "fr.pf.af",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.pf.core"
+    },
+    {
+      "features": [],
+      "from": "fr.pf.core",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.travail.smic"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [
+    {
+      "artifactHash": "sha256:10e0d7ee05977e960728581e910cfa6617f61d28c9cd1db0316aa884bb9a5fdc",
+      "features": [
+        "core-executable",
+        "law.params/0.1"
+      ],
+      "name": "fr.apl",
+      "namespace": "urn:fr:corpus:clir:apl",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.apl/0.1.0",
+      "sourceHash": "sha256:ea2faf25ad33778f60e5580372d3fd20e907dafd18e2c354aeac75b50bed50b1",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:41d70c5d3238ca852f2fab042a9fb876f1eab31bb363889ed1a91f21a83aec05",
+      "features": [
+        "core-executable"
+      ],
+      "name": "fr.css.prime_activite",
+      "namespace": "urn:fr:corpus:clir:ppa",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.css.prime_activite/0.1.0",
+      "sourceHash": "sha256:d4b3a9811dd0483967a3a7de11f9beb8ed663aa47478792e4e350fe56138d84d",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:2b3fef81028b71a2304f2746874b3c05d9cd9b2e11f17e973ecf6108f54fe787",
+      "features": [
+        "core-executable",
+        "law.params/0.1"
+      ],
+      "name": "fr.pf.af",
+      "namespace": "urn:fr:corpus:clir:pf-af",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.pf.af/0.1.0",
+      "sourceHash": "sha256:01c91aab80cf29f52b3bd7a97e374baa74e0cc78056d54aac4527cf7dff48177",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:2400e15f9d527fe8732d8de92d160080ee5b847134deb000b75c0485693812f7",
+      "features": [
+        "core-executable"
+      ],
+      "name": "fr.pf.core",
+      "namespace": "urn:fr:corpus:clir:pf-core",
+      "questionCatalogHash": "sha256:a36ed063d353c05f36ef53149872ff46772a17d4abe5bcf223b56aacb32400bf",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.pf.core/0.1.0",
+      "sourceHash": "sha256:607e7dd41a935fc92738203be32c99e26deee699256205ee28ac3d2acc22e6f1",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:e74037d1684240c1bdcabc34d84818596bb8938431f3ab442e3c49e7b167f4ee",
+      "features": [
+        "core-executable",
+        "law.params/0.1"
+      ],
+      "name": "fr.tax.income_for_apl",
+      "namespace": "urn:fr:tax:clir:income-for-apl",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.tax.income_for_apl/0.1.0",
+      "sourceHash": "sha256:e19ede606475e04fb0d0d84808f51af8d4f562c48706358d1d41e6229459c537",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:ebb2d3c2f69f873c4ae25c45a2559008eae439279d5f03f3d5eca660cdd208ae",
+      "features": [
+        "core-executable"
+      ],
+      "name": "fr.travail.smic",
+      "namespace": "urn:fr:corpus:clir:smic",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.travail.smic/0.1.0",
+      "sourceHash": "sha256:9aedf9de462472d53ab4e335215c30e801e513efb4eac8f1ade1ba039e5c0dac",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:44940de2fa1225f345ae28e8a7cec84d376a3399cc26c7ecfdbcf30f9368a4f9",
+      "features": [
+        "core-executable"
+      ],
+      "name": "vocab.source_records",
+      "namespace": "urn:arxo:vocab.source_records",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/vocab.source_records/0.1.0",
+      "sourceHash": "sha256:72ed63b5185a1ccbbdbd42530add1d41b9dd8ffa93d79a4191937f4086bc5ea1",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:baec898801eff810f635ab490bb57a9571b3635cf047425e70309773b1e381ac",
+  "resources": [
+    {
+      "capability": "evidence",
+      "contentHash": "sha256:eb4175829493575f46e646c31c24f77308d54eab822111a5161c5e80f366f21f",
+      "id": "document:notification.fr.txt",
+      "kind": "document",
+      "path": "resources/documents/notification.fr.txt"
+    }
+  ],
+  "root": {
+    "artifactHash": "sha256:fd571b9afd5dd45e17df8febdfad49994a5c27482378b0f9a6a3602d966164cd",
+    "name": "examples.fr.apl.recours_remise_fontaine",
+    "namespace": "urn:law:examples:fr:apl:recours-remise-fontaine",
+    "sourceHash": "sha256:2fa60d38af0c001a17ea901ad541d1e5eb9c5790822fa1eeb83b92e638ba6d84",
+    "version": "0.1.0"
+  }
+}

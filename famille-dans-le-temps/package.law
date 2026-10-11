@@ -1,0 +1,24 @@
+// Famille dans le temps: FACTS and saved QUESTIONS, no norms.
+//
+// Household: Camille (allocataire, b. 1990-02-14) + Mehdi, Lina
+// (b. 2018-05-10), Yanis (b. 2021-11-02), Chloe (b. 2025-06-20).
+// Brut amounts are caller-stated owner-chain values (see WITNESS.md),
+// never derived here; the case only routes them through the payment
+// stage (CRDS, floors, recovery). No author's task-guide route was
+// followed: the order of questions is the agent's, only the answers
+// are the canon's (apply-canon, without-guide).
+
+language "law.core" version "0.2";
+package fr.case.famille_dans_le_temps version "0.1.0";
+namespace "urn:fr:case:clir:famille-dans-le-temps";
+
+import fr.prestations.versement version "0.1.0";
+import fr.pf.core version "0.1.0";
+import fr.pf.af version "0.1.0";
+import fr.pf.ars version "0.1.0";
+import fr.pf.paje version "0.1.0";
+import fr.casf.rsa version "0.1.0";
+import fr.minima.ressources version "0.1.0";
+import fr.css.prime_activite version "0.1.0";
+import fr.apl.versement version "0.1.0";
+import fr.apl version "0.1.0";

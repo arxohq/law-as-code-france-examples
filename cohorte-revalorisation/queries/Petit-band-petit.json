@@ -1,0 +1,19 @@
+{
+  "queryId": "band-petit",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:pf-af#bande_ressources",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:cnaf:cohort:petit"
+      },
+      {
+        "kind": "const_ref",
+        "id": "urn:fr:corpus:clir:pf-af#BANDE_1"
+      }
+    ]
+  }
+}

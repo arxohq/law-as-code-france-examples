@@ -1,0 +1,23 @@
+{
+  "queryId": "cra-dossier-divergent-truth",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:ppa#indu_recupere",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:cnaf:cra:dossierdivergent"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "currency": "EUR",
+        "value": "600"
+      }
+    ]
+  }
+}

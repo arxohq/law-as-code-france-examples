@@ -1,0 +1,23 @@
+{
+  "queryId": "equivalence-loyer-minimale",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:apl#equivalence_loyer_minimale",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:apl:douzieme:resident"
+      },
+      {
+        "currency": "EUR",
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "164.76"
+      }
+    ]
+  }
+}

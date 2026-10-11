@@ -1,0 +1,23 @@
+{
+  "queryId": "aide-nette-crds",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:apl#aide_nette_precompte_crds",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:apl:douzieme:resident"
+      },
+      {
+        "currency": "EUR",
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "132.00130088"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "case": "TenantDecembre",
+    "file": "TenantDecembre-resources-tenantdecembre.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "TenantJanvier",
+    "file": "TenantJanvier-resources-tenantjanvier.json",
+    "truth": "TRUE_ONLY"
+  }
+]

@@ -1,0 +1,28 @@
+language "law.core" version "0.2";
+package examples.fr.apl.douzieme_sans_arrondi version "0.1.0";
+namespace "urn:law:examples:fr:apl:douzieme-sans-arrondi";
+
+// Вымышленное дело: один жилец, logement-foyer общего типа (D. 832-25 1°),
+// зона II, метрополия, redevance 430 €, ресурсы 9 600 € в год, март 2026 года.
+// Выбрано прочтение D-82 fr.apl::ArrondiCentimeHalfUp (27-lecture-arrondi-centime.law):
+// неточное частное, округления которого текст не называет, — до сантима HALF_UP.
+case ResidentLectureD82 {
+    context {
+        legal_time @2026-03-10;
+        decision_time @2026-03-10T12:00:00+01:00;
+        knowledge_time @2026-03-10T12:00:00+01:00;
+        timezone "Europe/Paris";
+        interpretation fr.apl::PpPlancherFinal;
+        interpretation fr.apl::ArrondiCentimeHalfUp;
+    }
+
+    assert "secteur": fr.apl::secteur_logement_foyer(entity_ref("urn:law:examples:fr:apl:douzieme:resident")) { origin case_input; }
+    assert "aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::APL) { origin case_input; }
+    assert "type-foyer": fr.apl::type_logement_foyer(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::GENERAL) { origin case_input; }
+    assert "zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::ZONE_II) { origin case_input; }
+    assert "territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::METROPOLE) { origin case_input; }
+    assert "situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::PERSONNE_SEULE) { origin case_input; }
+    assert "pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 0) { origin case_input; }
+    assert "redevance": fr.apl::redevance(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 430.00 EUR) { origin case_input; }
+    assert "ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 9600.00 EUR) { origin case_input; }
+}

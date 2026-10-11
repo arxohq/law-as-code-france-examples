@@ -1,0 +1,30 @@
+language "law.core" version "0.2";
+package fr.case.famille_dans_le_temps version "0.1.0";
+namespace "urn:fr:case:clir:famille-dans-le-temps";
+
+// DECEMBER 2025. AF indu 500.00 EUR established in November (no
+// fraud), recovered from the December echeance with a fund-stated
+// levy of 79.60 EUR. December AF brut stated 320.00 EUR.
+
+case Famille2025_12 {
+    context {
+        legal_time @2025-12-15;
+        decision_time @2025-12-15T12:00:00+01:00;
+        knowledge_time @2025-12-15T12:00:00+01:00;
+        timezone "Europe/Paris";
+    }
+    const camille: fr.pf.core::Personne =
+        entity_ref("urn:fr:case:famille:camille");
+
+    assert "af-brut": fr.pf.af::af_montant_du(entity_ref("urn:fr:case:famille:camille"), 320.00 EUR)
+        { origin case_input; }
+    assert "indu": fr.pf.core::indu_constate(entity_ref("urn:fr:case:famille:camille"), 500.00 EUR)
+        { origin case_input; }
+    assert "report": fr.prestations.versement::rsa_indu_reporte_sur_pf(entity_ref("urn:fr:case:famille:camille"), 0 EUR)
+        { origin case_input; }
+    assert "pa": fr.prestations.versement::pa_indu_reporte_sur_pf(entity_ref("urn:fr:case:famille:camille"), 0 EUR)
+        { origin case_input; }
+    assert "taux": fr.prestations.versement::prelevement_mensuel_declare(entity_ref("urn:fr:case:famille:camille"), 79.60 EUR) { origin case_input; }
+    assert "taux-licite-0": fr.prestations.versement::report_rsa_sur_pf_licite(entity_ref("urn:fr:case:famille:camille")) { origin case_input; }
+    assert "taux-licite-1": fr.prestations.versement::report_pa_sur_pf_licite(entity_ref("urn:fr:case:famille:camille")) { origin case_input; }
+}

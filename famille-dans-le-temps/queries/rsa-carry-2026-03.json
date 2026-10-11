@@ -1,0 +1,30 @@
+{
+  "queryId": "rsa-carry-2026-03",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:prestations-versement#net_verse_rsa",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:fr:case:famille:camille-rsa"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Date"
+        },
+        "value": "2026-03-01"
+      },
+      {
+        "currency": "EUR",
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "420.00"
+      }
+    ]
+  }
+}

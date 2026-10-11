@@ -1,0 +1,44 @@
+# Пакет-дело §168.4: одна вымышленная семья (Нади и Тома Garnier, трое детей,
+# наём дома в зоне II) — казус писем Л3 (CNAF) и Л4 (DINUM/Etalab). Вопросы:
+# AF по строкам таблицы DSS (прочтение fr.pf.af::ArrondiLignesDss), AF после
+# удержания CRDS, жилищная помощь с пропорцией и шагом D. 823-16 (прочтения
+# fr.apl::PpPlancherFinal и fr.apl::ArrondiCentimeHalfUp), сроки права и
+# изменения, обязанности получателя и кассы. Норм нет: правила — у канонов.
+[package]
+name = "examples.fr.prestations_versement.famille_trois_enfants_loyer"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:fr:prestations-versement:famille-trois-enfants-loyer"
+
+[dependencies]
+"fr.prestations.versement" = "0.1.0"
+"fr.pf.core" = "0.1.0"
+"fr.pf.af" = "0.1.0"
+"fr.apl" = "0.1.0"
+"fr.pf.cmg" = "0.1.0"
+
+[[cases]]
+name = "Garnier2026Avril"
+path = "cases/garnier-2026-avril.lawcase"
+
+[[cases]]
+name = "Garnier2026AvrilTexteSeul"
+path = "cases/garnier-2026-avril-texte-seul.lawcase"
+
+[[cases]]
+name = "Garnier2026Mai"
+path = "cases/garnier-2026-mai.lawcase"
+
+# Двойник §267 вопросов check.py (те же факты и ожидания). Мир — потребитель
+# fr.prestations.versement и его закреплённые зависимости, которые называет дело.
+[[tests]]
+family = "examples.fr.prestations_versement.famille_trois_enfants_loyer#cas"
+regression = false
+suites = ["tests/famille-trois-enfants-loyer.lawtest"]
+world = ["examples.fr.prestations_versement.famille_trois_enfants_loyer", "fr.prestations.versement", "fr.pf.core", "fr.pf.af", "fr.apl", "fr.pf.cmg"]
+
+[metadata]
+act = "fr-prestations-versement-examples-famille-trois-enfants-loyer"
+
+[authoring]
+local_imports = "explicit"

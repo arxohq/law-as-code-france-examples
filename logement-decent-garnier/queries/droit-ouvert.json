@@ -1,0 +1,15 @@
+{
+  "queryId": "droit-ouvert",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:apl#droit_ouvert",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:garnier:menage"
+      }
+    ]
+  }
+}

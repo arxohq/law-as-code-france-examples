@@ -1,0 +1,28 @@
+language "law.core" version "0.2";
+package examples.fr.prestations_versement.famille_trois_enfants_loyer version "0.1.0";
+namespace "urn:law:examples:fr:prestations-versement:famille-trois-enfants-loyer";
+
+// Май 2026 года: изменение положения в период выплаты и заявление о пересмотре.
+case Garnier2026Mai {
+    context {
+        legal_time @2026-05-26;
+        decision_time @2026-05-26T12:00:00+02:00;
+        knowledge_time @2026-05-26T12:00:00+02:00;
+        timezone "Europe/Paris";
+        deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE;
+        interpretation fr.apl::PpPlancherFinal;
+        interpretation fr.apl::ArrondiCentimeHalfUp;
+        interpretation fr.pf.af::ArrondiLignesDss;
+    }
+
+    // касса — должник жилищной помощи
+    assert "chg-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // allocation de logement familiale выплачивается
+    assert "chg-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+    // Thomas теряет работу 18 мая 2026 года
+    assert "chg-date": fr.apl::changement_modifiant_droits_le(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-05-18) { origin case_input; }
+    // изменение в период выплаты (R. 823-3)
+    assert "chg-periode": fr.apl::changement_situation_periode_paiement(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // подано заявление о пересмотре
+    assert "chg-revision": fr.apl::demande_revision_montant_aide(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+}

@@ -1,0 +1,34 @@
+language "law.core" version "0.2";
+package examples.fr.apl.recours_remise_fontaine version "0.1.0";
+namespace "urn:law:examples:fr:apl:recours-remise-fontaine";
+
+case FontaineRemise {
+    context { legal_time @2026-04-15; decision_time @2026-04-15T12:00:00+01:00; knowledge_time @2026-04-15T12:00:00+01:00; timezone "Europe/Paris"; interpretation fr.apl::PpPlancherFinal; interpretation fr.pf.af::ArrondiLignesDss; deadline_policy fr.apl::APL_RECOURS; }
+    assert "input-0": fr.apl::demande_remise_gracieuse(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), @2026-04-15) { origin case_input; }
+    assert "input-1": fr.apl::dette_bien_fonde_non_conteste(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise")) { origin case_input; }
+    assert "input-2": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:cnaf:fund"), entity_ref("urn:law:examples:fr:cnaf:fontaine-remise")) { origin case_input; }
+    assert "input-3": fr.apl::avis_commission_recours_amiable(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise")) { origin case_input; }
+    assert "af-input-0": fr.pf.af::territoire(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), fr.pf.af::METROPOLE) { origin case_input; }
+    assert "af-input-1": fr.pf.af::nb_enfants_charge(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 3) { origin case_input; }
+    assert "af-input-2": fr.pf.af::ressources_menage(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 40000 EUR) { origin case_input; }
+    assert "af-input-3": fr.pf.af::plafond_base_tranche1_publie(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 66652 EUR) { origin case_input; }
+    assert "af-input-4": fr.pf.af::plafond_base_tranche2_publie(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 93276 EUR) { origin case_input; }
+    assert "af-input-5": fr.pf.af::majoration_plafond_enfant_publiee(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 6664 EUR) { origin case_input; }
+    assert "af-input-6": fr.pf.af::bmaf_retenu(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 478.16 EUR) { origin case_input; }
+    assert "af-input-7": fr.pf.af::nb_majorations_pleines(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 0) { origin case_input; }
+    assert "af-input-8": fr.pf.af::nb_majorations_demi(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 0) { origin case_input; }
+    assert "af-input-9": fr.pf.af::forfait_total_menage(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 0 EUR) { origin case_input; }
+    assert "af-input-10": fr.pf.af::nb_enfants_ase_service(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise"), 0) { origin case_input; }
+    assert "af-input-11": fr.pf.af::foyer_du_cas(entity_ref("urn:law:examples:fr:cnaf:fontaine-remise")) { origin case_input; }
+    assert "recovery-input-0": fr.css.prime_activite::indu_constate(entity_ref("urn:law:examples:fr:cnaf:fontaine-applicant"), 600 EUR) { origin case_input; }
+    assert "recovery-input-1": fr.css.prime_activite::action_non_prescrite(entity_ref("urn:law:examples:fr:cnaf:fontaine-applicant")) { origin case_input; }
+    assert "recovery-input-2": fr.css.prime_activite::recours_suspensif(entity_ref("urn:law:examples:fr:cnaf:fontaine-applicant")) { origin case_input; }
+    evidence Notification: vocab.source_records::Resource {
+        id "fontaine-fictional-generated-notice";
+        status presented;
+        observed_at @2026-04-15T12:00:00+01:00;
+        recorded_at @2026-04-15T12:00:00+01:00;
+        uri "resources/documents/notification.fr.txt";
+        content_hash "sha256:eb4175829493575f46e646c31c24f77308d54eab822111a5161c5e80f366f21f";
+    }
+}

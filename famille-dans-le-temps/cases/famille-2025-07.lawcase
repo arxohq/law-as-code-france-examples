@@ -1,0 +1,31 @@
+language "law.core" version "0.2";
+package fr.case.famille_dans_le_temps version "0.1.0";
+namespace "urn:fr:case:clir:famille-dans-le-temps";
+
+// JULY 2025. Chloe born 2025-06-20: PAJE birth prime stated
+// 1000.00 EUR (owner chain). AF now three children, July brut
+// stated 320.00 EUR.
+
+case Famille2025_07 {
+    context {
+        legal_time @2025-07-15;
+        decision_time @2025-07-15T12:00:00+02:00;
+        knowledge_time @2025-07-15T12:00:00+02:00;
+        timezone "Europe/Paris";
+    }
+    const camille: fr.pf.core::Personne =
+        entity_ref("urn:fr:case:famille:camille");
+    const menage_paje: fr.pf.paje::Menage =
+        entity_ref("urn:fr:case:famille:menage-paje");
+    const chloe: fr.pf.paje::Enfant =
+        entity_ref("urn:fr:case:famille:chloe");
+
+    assert "prime": fr.pf.paje::prime_attribuee(entity_ref("urn:fr:case:famille:menage-paje"), entity_ref("urn:fr:case:famille:chloe"), 1000.00 EUR)
+        { origin case_input; }
+    assert "af-brut": fr.pf.af::af_montant_du(entity_ref("urn:fr:case:famille:camille"), 320.00 EUR)
+        { origin case_input; }
+    assert "org-pf": fr.pf.core::organisme_debiteur_pf(entity_ref("urn:fr:case:famille:caisse"), entity_ref("urn:fr:case:famille:camille"))
+        { origin case_input; }
+    assert "org-paje": fr.pf.paje::organisme_debiteur(entity_ref("urn:fr:case:famille:caisse-paje"), entity_ref("urn:fr:case:famille:menage-paje"))
+        { origin case_input; }
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "case": "Martin",
+    "file": "Martin-band-martin.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "Bernard",
+    "file": "Bernard-band-bernard.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "Petit",
+    "file": "Petit-band-petit.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "Durand",
+    "file": "af-durand-droit.json",
+    "truth": "NEITHER"
+  },
+  {
+    "case": "Martin",
+    "file": "Martin-amount.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "Bernard",
+    "file": "Bernard-amount.json",
+    "truth": "TRUE_ONLY"
+  },
+  {
+    "case": "Petit",
+    "file": "Petit-amount.json",
+    "truth": "TRUE_ONLY"
+  }
+]
