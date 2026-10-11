@@ -1,0 +1,23 @@
+{
+  "queryId": "ars-net-2024-08",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:prestations-versement#montant_net_crds_ars",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:fr:case:famille:lina"
+      },
+      {
+        "currency": "EUR",
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "398.00"
+      }
+    ]
+  }
+}

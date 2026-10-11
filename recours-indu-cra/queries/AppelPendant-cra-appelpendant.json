@@ -1,0 +1,15 @@
+{
+  "queryId": "cra-appelpendant",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:ppa#recouvrement_suspendu",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:cnaf:cra:appelpendant"
+      }
+    ]
+  }
+}

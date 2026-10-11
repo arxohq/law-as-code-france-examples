@@ -1,0 +1,36 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.fr.prime_activite.recours_indu_cra",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.css.prime_activite"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [
+    {
+      "artifactHash": "sha256:41d70c5d3238ca852f2fab042a9fb876f1eab31bb363889ed1a91f21a83aec05",
+      "features": [
+        "core-executable"
+      ],
+      "name": "fr.css.prime_activite",
+      "namespace": "urn:fr:corpus:clir:ppa",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.css.prime_activite/0.1.0",
+      "sourceHash": "sha256:d4b3a9811dd0483967a3a7de11f9beb8ed663aa47478792e4e350fe56138d84d",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:82d98295bfa096e95ee0a99ef7836db6812bfdbd18a37c82e216ef73b99889ba",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:bfa22284479fba926d3e6d6dbe3b2fb65df935c80e5ce0087fa3af4f0b4e6408",
+    "name": "examples.fr.prime_activite.recours_indu_cra",
+    "namespace": "urn:law:examples:fr:prime-activite:recours-indu-cra",
+    "sourceHash": "sha256:b4adcd7b80535eff775f911058263d46c29f6b4d78378dbac6dcc47f4fc4bbd5",
+    "version": "0.1.0"
+  }
+}

@@ -1,0 +1,302 @@
+// Двойник §267 вопросов check.py: три дела пристойности жилья семьи Garnier
+// (ответа органа нет; жильё признано пристойным; констатирована непристойность).
+// Ожидания — ответ канона fr.apl на тех же фактах. Адресата запроса судье
+// (fr.apl::logement_decent → OrganismePayeur) проверяет check.py: форма
+// judgment_request(P, A) §267.4 принимает только имена своего пакета, а
+// квалификация пакет::Имя (как у interpretations, DECISION-0152 §7) для неё
+// не предусмотрена — кандидат errata (11.10.2026).
+language "law.core" version "0.2";
+package examples.fr.apl.logement_decent_garnier version "0.1.0";
+namespace "urn:law:examples:fr:apl:logement-decent-garnier";
+
+test "urn:query:examples-fr-apl-logement-decent-garnier-DecenceEnAttente-droit-ouvert" {
+    given {
+        context { legal_time @2026-04-15; decision_time @2026-04-15T12:00:00+02:00; knowledge_time @2026-04-15T12:00:00+02:00; timezone "Europe/Paris"; deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+        assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+        assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+        assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+        assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+        assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+        assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+        assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+        assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+        assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+        assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+    }
+    evaluate truth(fr.apl::droit_ouvert(entity_ref("urn:law:examples:fr:garnier:menage")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == REQUIRES_JUDGMENT;
+}
+
+test "urn:query:examples-fr-apl-logement-decent-garnier-DecenceEnAttente-aide-mensuelle" {
+    given {
+        context { legal_time @2026-04-15; decision_time @2026-04-15T12:00:00+02:00; knowledge_time @2026-04-15T12:00:00+02:00; timezone "Europe/Paris"; deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+        assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+        assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+        assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+        assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+        assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+        assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+        assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+        assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+        assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+        assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+    }
+    evaluate truth(fr.apl::aide_mensuelle(entity_ref("urn:law:examples:fr:garnier:menage"), 189.95295 EUR));
+    expect truth_status == TRUE_ONLY;
+}
+
+test "urn:query:examples-fr-apl-logement-decent-garnier-DecenceEnAttente-positions" {
+    given {
+        context { legal_time @2026-04-15; decision_time @2026-04-15T12:00:00+02:00; knowledge_time @2026-04-15T12:00:00+02:00; timezone "Europe/Paris"; deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+        assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+        assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+        assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+        assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+        assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+        assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+        assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+        assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+        assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+        assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+    }
+    evaluate positions();
+    expect position(fr.apl::JoindrePiecesJustificatives, ACTIVE);
+    expect position(fr.apl::DeposerAttestationBailleur, ACTIVE);
+}
+
+test "urn:query:examples-fr-apl-logement-decent-garnier-DecenceReconnue-droit-ouvert" {
+    given {
+        context { legal_time @2026-04-15; decision_time @2026-04-15T12:00:00+02:00; knowledge_time @2026-04-15T12:00:00+02:00; timezone "Europe/Paris"; deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+        assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+        assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+        assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+        assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+        assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+        assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+        assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+        assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+        assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+        assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+        assert "al-decence": fr.apl::logement_decent(entity_ref("urn:law:examples:fr:garnier:menage")) { origin adjudicated; }
+    }
+    evaluate truth(fr.apl::droit_ouvert(entity_ref("urn:law:examples:fr:garnier:menage")));
+    expect truth_status == TRUE_ONLY;
+}
+
+test "urn:query:examples-fr-apl-logement-decent-garnier-DecenceReconnue-positions" {
+    given {
+        context { legal_time @2026-04-15; decision_time @2026-04-15T12:00:00+02:00; knowledge_time @2026-04-15T12:00:00+02:00; timezone "Europe/Paris"; deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+        assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+        assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+        assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+        assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+        assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+        assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+        assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+        assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+        assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+        assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+        assert "al-decence": fr.apl::logement_decent(entity_ref("urn:law:examples:fr:garnier:menage")) { origin adjudicated; }
+    }
+    evaluate positions();
+    expect position(fr.apl::VerserAideTheoriqueDue, ACTIVE);
+    expect position(fr.apl::JoindrePiecesJustificatives, ACTIVE);
+    expect position(fr.apl::DeposerAttestationBailleur, ACTIVE);
+}
+
+test "urn:query:examples-fr-apl-logement-decent-garnier-NonDecenceConstatee-droit-ouvert" {
+    given {
+        context { legal_time @2026-05-15; decision_time @2026-05-15T12:00:00+02:00; knowledge_time @2026-05-15T12:00:00+02:00; timezone "Europe/Paris"; deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+        assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+        assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+        assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+        assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+        assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+        assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+        assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+        assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+        assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+        assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+        assert "al-decence": not fr.apl::logement_decent(entity_ref("urn:law:examples:fr:garnier:menage")) { origin adjudicated; }
+        assert "nd-constat": fr.apl::constat_non_decence(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-04-28) { origin case_input; }
+        assert "nd-charges": fr.apl::charges_recuperables(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "nd-allocation": fr.apl::allocation_due_conservation(entity_ref("urn:law:examples:fr:garnier:menage"), 189.95295 EUR) { origin case_input; }
+        assert "nd-informe": fr.apl::locataire_informe_montant(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    }
+    evaluate truth(fr.apl::droit_ouvert(entity_ref("urn:law:examples:fr:garnier:menage")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+test "urn:query:examples-fr-apl-logement-decent-garnier-NonDecenceConstatee-conservation" {
+    given {
+        context { legal_time @2026-05-15; decision_time @2026-05-15T12:00:00+02:00; knowledge_time @2026-05-15T12:00:00+02:00; timezone "Europe/Paris"; deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+        assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+        assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+        assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+        assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+        assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+        assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+        assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+        assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+        assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+        assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+        assert "al-decence": not fr.apl::logement_decent(entity_ref("urn:law:examples:fr:garnier:menage")) { origin adjudicated; }
+        assert "nd-constat": fr.apl::constat_non_decence(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-04-28) { origin case_input; }
+        assert "nd-charges": fr.apl::charges_recuperables(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "nd-allocation": fr.apl::allocation_due_conservation(entity_ref("urn:law:examples:fr:garnier:menage"), 189.95295 EUR) { origin case_input; }
+        assert "nd-informe": fr.apl::locataire_informe_montant(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    }
+    evaluate truth(fr.apl::conservation_en_cours(entity_ref("urn:law:examples:fr:garnier:menage")));
+    expect truth_status == TRUE_ONLY;
+}
+
+test "urn:query:examples-fr-apl-logement-decent-garnier-NonDecenceConstatee-loyer-reduit" {
+    given {
+        context { legal_time @2026-05-15; decision_time @2026-05-15T12:00:00+02:00; knowledge_time @2026-05-15T12:00:00+02:00; timezone "Europe/Paris"; deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+        assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+        assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+        assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+        assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+        assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+        assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+        assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+        assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+        assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+        assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+        assert "al-decence": not fr.apl::logement_decent(entity_ref("urn:law:examples:fr:garnier:menage")) { origin adjudicated; }
+        assert "nd-constat": fr.apl::constat_non_decence(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-04-28) { origin case_input; }
+        assert "nd-charges": fr.apl::charges_recuperables(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "nd-allocation": fr.apl::allocation_due_conservation(entity_ref("urn:law:examples:fr:garnier:menage"), 189.95295 EUR) { origin case_input; }
+        assert "nd-informe": fr.apl::locataire_informe_montant(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    }
+    evaluate truth(fr.apl::loyer_du_reduit(entity_ref("urn:law:examples:fr:garnier:menage"), 1130.04705 EUR));
+    expect truth_status == TRUE_ONLY;
+}
+
+test "urn:query:examples-fr-apl-logement-decent-garnier-NonDecenceConstatee-positions" {
+    given {
+        context { legal_time @2026-05-15; decision_time @2026-05-15T12:00:00+02:00; knowledge_time @2026-05-15T12:00:00+02:00; timezone "Europe/Paris"; deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+        assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+        assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+        assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+        assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+        assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+        assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+        assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+        assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+        assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+        assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+        assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+        assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+        assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+        assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+        assert "al-decence": not fr.apl::logement_decent(entity_ref("urn:law:examples:fr:garnier:menage")) { origin adjudicated; }
+        assert "nd-constat": fr.apl::constat_non_decence(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-04-28) { origin case_input; }
+        assert "nd-charges": fr.apl::charges_recuperables(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+        assert "nd-allocation": fr.apl::allocation_due_conservation(entity_ref("urn:law:examples:fr:garnier:menage"), 189.95295 EUR) { origin case_input; }
+        assert "nd-informe": fr.apl::locataire_informe_montant(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    }
+    evaluate positions();
+    expect position(fr.apl::NotifierProprietaireConstat, ACTIVE);
+    expect position(fr.apl::InformerLocataireConformite843, ACTIVE);
+    expect position(fr.apl::InformerProprietaireAides, ACTIVE);
+    expect position(fr.apl::NonResiliationBailNonDecence, ACTIVE);
+    expect position(fr.apl::DeposerAttestationBailleur, ACTIVE);
+}

@@ -1,0 +1,15 @@
+{
+  "queryId": "conservation",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:apl#conservation_en_cours",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:garnier:menage"
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+language "law.core" version "0.2";
+package examples.fr.prestations_versement.famille_trois_enfants_loyer version "0.1.0";
+namespace "urn:law:examples:fr:prestations-versement:famille-trois-enfants-loyer";
+
+// Апрель 2026 года; выбраны названные прочтения: ArrondiLignesDss (D-83, строки таблицы DSS), ArrondiCentimeHalfUp (D-82), PpPlancherFinal.
+case Garnier2026Avril {
+    context {
+        legal_time @2026-04-15;
+        decision_time @2026-04-15T12:00:00+02:00;
+        knowledge_time @2026-04-15T12:00:00+02:00;
+        timezone "Europe/Paris";
+        deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE;
+        interpretation fr.apl::PpPlancherFinal;
+        interpretation fr.apl::ArrondiCentimeHalfUp;
+        interpretation fr.pf.af::ArrondiLignesDss;
+    }
+
+    // проживание в метрополии
+    assert "af-territoire": fr.pf.af::territoire(entity_ref("urn:law:examples:fr:garnier:nadia"), fr.pf.af::METROPOLE) { origin case_input; }
+    // трое детей на иждивении: Inès (03.11.2010), Hugo (21.06.2015), Léa (09.02.2021)
+    assert "af-enfants": fr.pf.af::nb_enfants_charge(entity_ref("urn:law:examples:fr:garnier:nadia"), 3) { origin case_input; }
+    // ресурсы домохозяйства по R. 532-3 – R. 532-8
+    assert "af-ressources": fr.pf.af::ressources_menage(entity_ref("urn:law:examples:fr:garnier:nadia"), 24600.00 EUR) { origin case_input; }
+    // опубликованный плафон, DSS/2B/2025/177 (revalorisation/sources/dss-2025-177.txt:189)
+    assert "af-plafond-1": fr.pf.af::plafond_base_tranche1_publie(entity_ref("urn:law:examples:fr:garnier:nadia"), 66652 EUR) { origin case_input; }
+    // опубликованный плафон, DSS/2B/2025/177 (dss-2025-177.txt:191)
+    assert "af-plafond-2": fr.pf.af::plafond_base_tranche2_publie(entity_ref("urn:law:examples:fr:garnier:nadia"), 93276 EUR) { origin case_input; }
+    // опубликованная надбавка за ребёнка, DSS/2B/2025/177 (dss-2025-177.txt:188)
+    assert "af-plafond-enfant": fr.pf.af::majoration_plafond_enfant_publiee(entity_ref("urn:law:examples:fr:garnier:nadia"), 6664 EUR) { origin case_input; }
+    // BMAF с 1 апреля 2026 года, DSS/2B/2026/46 (revalorisation/sources/dss-2026-46.txt:177)
+    assert "af-bmaf": fr.pf.af::bmaf_retenu(entity_ref("urn:law:examples:fr:garnier:nadia"), 478.16 EUR) { origin case_input; }
+    // одна надбавка за возраст: Inès 15 лет, семья из трёх детей
+    assert "af-majorations": fr.pf.af::nb_majorations_pleines(entity_ref("urn:law:examples:fr:garnier:nadia"), 1) { origin case_input; }
+    // попеременного проживания нет
+    assert "af-majorations-demi": fr.pf.af::nb_majorations_demi(entity_ref("urn:law:examples:fr:garnier:nadia"), 0) { origin case_input; }
+    // ребёнка в возрасте форфейта нет
+    assert "af-forfait": fr.pf.af::forfait_total_menage(entity_ref("urn:law:examples:fr:garnier:nadia"), 0 EUR) { origin case_input; }
+    // детей, переданных службе ASE, нет
+    assert "af-ase": fr.pf.af::nb_enfants_ase_service(entity_ref("urn:law:examples:fr:garnier:nadia"), 0) { origin case_input; }
+    // домохозяйство дела
+    assert "af-foyer": fr.pf.af::foyer_du_cas(entity_ref("urn:law:examples:fr:garnier:nadia")) { origin case_input; }
+    // касса — должник семейных пособий
+    assert "caf-pf": fr.pf.core::organisme_debiteur_pf(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:nadia")) { origin case_input; }
+    // наём
+    assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // запрошена allocation de logement familiale
+    assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+    // зона II
+    assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+    // метрополия
+    assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+    // пара
+    assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+    // трое иждивенцев
+    assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+    // годовые ресурсы
+    assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+    // основная плата за дом из пяти комнат
+    assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+    // без колокации
+    assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+    // обычное жильё
+    assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+    // частный владелец: RLS нет
+    assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+    // ни AAH, ни AEEH
+    assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+    // касса — должник жилищной помощи
+    assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // основное место проживания
+    assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // въезд в дом
+    assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+    // подано заявление
+    assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+    // вне изъятия R. 823-11 (временное размещение)
+    assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // вне изъятия R. 823-11 (непригодность, опасность)
+    assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+}

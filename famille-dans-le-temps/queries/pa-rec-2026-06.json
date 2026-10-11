@@ -1,0 +1,23 @@
+{
+  "queryId": "pa-rec-2026-06",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:prestations-versement#net_verse_pa",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:fr:case:famille:camille-pa"
+      },
+      {
+        "currency": "EUR",
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "210.00"
+      }
+    ]
+  }
+}

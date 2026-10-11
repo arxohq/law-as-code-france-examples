@@ -1,0 +1,9 @@
+language "law.core" version "0.2";
+package examples.fr.pf.paje.prime_naissance_moreau version "0.1.0";
+namespace "urn:law:examples:fr:pf:paje:prime-naissance-moreau";
+
+import fr.pf.paje version "0.1.0";
+
+// Famille Moreau fictive, distincte des Garnier. Données pédagogiques
+// des tests du canon: BMAF 400 EUR, plafond de base 30000 EUR, juillet 2025.
+// Ces données ne sont pas un barème publié pour une famille réelle.

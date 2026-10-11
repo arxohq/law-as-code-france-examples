@@ -1,0 +1,23 @@
+{
+  "queryId": "benefit-af",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:pf-af#af_montant_du",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:cnaf:fontaine-remise"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "349.06",
+        "currency": "EUR"
+      }
+    ]
+  }
+}

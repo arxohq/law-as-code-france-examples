@@ -1,0 +1,74 @@
+// Двойник §267 вопросов check.py: два дела с одними фактами. Без прочтения
+// E0 «divisé par douze» не конечно — отказ INEXACT_DIVISION (§50: деление без
+// политики округления не округляется молча); с прочтением D-82 — E0 до сантима
+// и итог. Ожидания — из реплики на дробях (sources/WITNESS.md), сверенной с
+// ответом канона.
+language "law.core" version "0.2";
+package examples.fr.apl.douzieme_sans_arrondi version "0.1.0";
+namespace "urn:law:examples:fr:apl:douzieme-sans-arrondi";
+
+test "urn:query:examples-fr-apl-douzieme-sans-lecture" {
+    given {
+        context { legal_time @2026-03-10; decision_time @2026-03-10T12:00:00+01:00; knowledge_time @2026-03-10T12:00:00+01:00; timezone "Europe/Paris"; interpretation fr.apl::PpPlancherFinal; }
+        assert "secteur": fr.apl::secteur_logement_foyer(entity_ref("urn:law:examples:fr:apl:douzieme:resident")) { origin case_input; }
+        assert "aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::APL) { origin case_input; }
+        assert "type-foyer": fr.apl::type_logement_foyer(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::GENERAL) { origin case_input; }
+        assert "zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::ZONE_II) { origin case_input; }
+        assert "territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::METROPOLE) { origin case_input; }
+        assert "situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::PERSONNE_SEULE) { origin case_input; }
+        assert "pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 0) { origin case_input; }
+        assert "redevance": fr.apl::redevance(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 430.00 EUR) { origin case_input; }
+        assert "ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 9600.00 EUR) { origin case_input; }
+    }
+    // 1 977,17096 / 12 = 164,7642466… — частное непредставимо, политики в тексте нет.
+    evaluate truth(fr.apl::equivalence_loyer_minimale(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 164.76 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == NEITHER;
+    expect evaluation_status == RUNTIME_ERROR;
+    expect issue(INEXACT_DIVISION);
+    evaluate truth(fr.apl::aide_mensuelle(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 132.664624 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == NEITHER;
+    expect evaluation_status == RUNTIME_ERROR;
+    expect issue(INEXACT_DIVISION);
+}
+
+test "urn:query:examples-fr-apl-douzieme-lecture-d82" {
+    given {
+        context { legal_time @2026-03-10; decision_time @2026-03-10T12:00:00+01:00; knowledge_time @2026-03-10T12:00:00+01:00; timezone "Europe/Paris"; interpretation fr.apl::PpPlancherFinal; interpretation fr.apl::ArrondiCentimeHalfUp; }
+        assert "secteur": fr.apl::secteur_logement_foyer(entity_ref("urn:law:examples:fr:apl:douzieme:resident")) { origin case_input; }
+        assert "aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::APL) { origin case_input; }
+        assert "type-foyer": fr.apl::type_logement_foyer(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::GENERAL) { origin case_input; }
+        assert "zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::ZONE_II) { origin case_input; }
+        assert "territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::METROPOLE) { origin case_input; }
+        assert "situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), fr.apl::PERSONNE_SEULE) { origin case_input; }
+        assert "pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 0) { origin case_input; }
+        assert "redevance": fr.apl::redevance(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 430.00 EUR) { origin case_input; }
+        assert "ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 9600.00 EUR) { origin case_input; }
+    }
+    // E0 = div_round(1 977,17096; 12; 2; HALF_UP) = 164,76; K = 0,52;
+    // Af = 0,52 × (430 − 164,76) = 137,9248; −5 → 132,9248; шаг взносов → 132,664624.
+    evaluate truth(fr.apl::equivalence_loyer_minimale(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 164.76 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(fr.apl::EquivalenceLoyerMinimaleArrondie);
+    expect applied(fr.apl::ArrondiIntermediaireCentime);
+    evaluate truth(fr.apl::aide_foyer_formule(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 137.9248 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(fr.apl::AideFoyerFormuleAPL);
+    expect applied(fr.apl::CoefficientPriseEnChargeAPLGeneral);
+    evaluate truth(fr.apl::aide_mensuelle(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 132.664624 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(fr.apl::ContributionsSocialesFoyerAPL);
+    expect applied(fr.apl::AideFoyerVersee);
+    evaluate truth(fr.apl::aide_nette_precompte_crds(entity_ref("urn:law:examples:fr:apl:douzieme:resident"), 132.00130088 EUR));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(fr.apl::PrecompteCRDSMetropole);
+}

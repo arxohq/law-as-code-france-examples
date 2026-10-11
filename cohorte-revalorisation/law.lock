@@ -1,0 +1,76 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.fr.pf_af.cohorte_revalorisation",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.pf.af"
+    },
+    {
+      "features": [],
+      "from": "fr.pf.af",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.pf.core"
+    },
+    {
+      "features": [],
+      "from": "fr.pf.core",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.travail.smic"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [
+    {
+      "artifactHash": "sha256:2b3fef81028b71a2304f2746874b3c05d9cd9b2e11f17e973ecf6108f54fe787",
+      "features": [
+        "core-executable",
+        "law.params/0.1"
+      ],
+      "name": "fr.pf.af",
+      "namespace": "urn:fr:corpus:clir:pf-af",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.pf.af/0.1.0",
+      "sourceHash": "sha256:01c91aab80cf29f52b3bd7a97e374baa74e0cc78056d54aac4527cf7dff48177",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:2400e15f9d527fe8732d8de92d160080ee5b847134deb000b75c0485693812f7",
+      "features": [
+        "core-executable"
+      ],
+      "name": "fr.pf.core",
+      "namespace": "urn:fr:corpus:clir:pf-core",
+      "questionCatalogHash": "sha256:a36ed063d353c05f36ef53149872ff46772a17d4abe5bcf223b56aacb32400bf",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.pf.core/0.1.0",
+      "sourceHash": "sha256:607e7dd41a935fc92738203be32c99e26deee699256205ee28ac3d2acc22e6f1",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:ebb2d3c2f69f873c4ae25c45a2559008eae439279d5f03f3d5eca660cdd208ae",
+      "features": [
+        "core-executable"
+      ],
+      "name": "fr.travail.smic",
+      "namespace": "urn:fr:corpus:clir:smic",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.travail.smic/0.1.0",
+      "sourceHash": "sha256:9aedf9de462472d53ab4e335215c30e801e513efb4eac8f1ade1ba039e5c0dac",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:13c54fe9c597d63015abffec33541dec85eda448736771a7dffd7eed42e28f43",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:6e04953e825e8a51456996059a48c1171bef88efa5f1bbce7f989edd0bc09d45",
+    "name": "examples.fr.pf_af.cohorte_revalorisation",
+    "namespace": "urn:law:examples:fr:pf-af:cohorte-revalorisation",
+    "sourceHash": "sha256:de42a4e07bcec6621650b61aac118a9d79b2ec6aea7595cc9d6077609b197e8b",
+    "version": "0.1.0"
+  }
+}

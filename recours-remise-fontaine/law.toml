@@ -1,0 +1,28 @@
+[package]
+pinned = true
+name = "examples.fr.apl.recours_remise_fontaine"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:fr:apl:recours-remise-fontaine"
+
+[dependencies]
+"vocab.source_records" = "0.1.0"
+"fr.apl" = "0.1.0"
+"fr.pf.af" = "0.1.0"
+"fr.css.prime_activite" = "0.1.0"
+
+[[cases]]
+name = "FontaineRemise"
+path = "cases/FontaineRemise.lawcase"
+
+[[tests]]
+family = "examples.fr.apl.recours_remise_fontaine#draft"
+regression = false
+suites = ["tests/draft.lawtest"]
+world = ["examples.fr.apl.recours_remise_fontaine", "fr.apl", "fr.pf.af", "fr.css.prime_activite", "vocab.source_records"]
+
+[metadata]
+act = "fr-apl-examples-recours-remise-fontaine"
+
+[authoring]
+local_imports = "explicit"

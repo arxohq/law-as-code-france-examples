@@ -1,0 +1,27 @@
+{
+  "queryId": "montant",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:pf-paje#prime_attribuee",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:moreau:menage"
+      },
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:moreau:enfant"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "919.00",
+        "currency": "EUR"
+      }
+    ]
+  }
+}

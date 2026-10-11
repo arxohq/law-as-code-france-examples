@@ -1,0 +1,29 @@
+language "law.core" version "0.2";
+package fr.case.famille_dans_le_temps version "0.1.0";
+namespace "urn:fr:case:clir:famille-dans-le-temps";
+
+// AUGUST 2024. Rentrée scolaire: ARS for Lina stated 400.00 EUR
+// (owner chain); household ARS total stated 400.00 EUR (fund-stated,
+// engine cannot fold per-child heads — 03 precedent).
+
+case Famille2024_08 {
+    context {
+        legal_time @2024-08-15;
+        decision_time @2024-08-15T12:00:00+02:00;
+        knowledge_time @2024-08-15T12:00:00+02:00;
+        timezone "Europe/Paris";
+    }
+    const camille: fr.pf.core::Personne =
+        entity_ref("urn:fr:case:famille:camille");
+    const lina: fr.pf.core::Enfant =
+        entity_ref("urn:fr:case:famille:lina");
+
+    assert "ars-brut": fr.pf.ars::ars_montant_du(entity_ref("urn:fr:case:famille:lina"), 400.00 EUR)
+        { origin case_input; }
+    assert "ars-total": fr.prestations.versement::total_menage_ars_retenu(entity_ref("urn:fr:case:famille:camille"), 400.00 EUR)
+        { origin case_input; }
+    assert "org": fr.pf.core::organisme_debiteur_pf(entity_ref("urn:fr:case:famille:caisse"), entity_ref("urn:fr:case:famille:camille"))
+        { origin case_input; }
+    assert "limite": fr.prestations.versement::date_limite_versement(@2024-08-31)
+        { origin case_input; }
+}

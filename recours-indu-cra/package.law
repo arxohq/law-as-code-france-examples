@@ -1,0 +1,7 @@
+language "law.core" version "0.2";
+package examples.fr.prime_activite.recours_indu_cra version "0.1.0";
+namespace "urn:law:examples:fr:prime-activite:recours-indu-cra";
+
+import fr.css.prime_activite version "0.1.0";
+
+// Draft fictional inputs only; no normative rules. Native execution not checked.

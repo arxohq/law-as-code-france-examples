@@ -1,0 +1,49 @@
+language "law.core" version "0.2";
+package examples.fr.apl.logement_decent_garnier version "0.1.0";
+namespace "urn:law:examples:fr:apl:logement-decent-garnier";
+
+// Апрель 2026 года: ответа органа о пристойности жилья (L. 822-9) ещё нет.
+case DecenceEnAttente {
+    context {
+        legal_time @2026-04-15;
+        decision_time @2026-04-15T12:00:00+02:00;
+        knowledge_time @2026-04-15T12:00:00+02:00;
+        timezone "Europe/Paris";
+        deadline_policy fr.pf.cmg::CMG_MOIS_CALENDAIRE;
+        interpretation fr.apl::PpPlancherFinal;
+        interpretation fr.apl::ArrondiCentimeHalfUp;
+    }
+
+    // наём у частного владельца
+    assert "al-secteur": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // запрошена allocation de logement familiale
+    assert "al-aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ALF) { origin case_input; }
+    // семья получает allocations familiales (урок 4): категория ALF L. 841-1 1° a)
+    assert "al-af": fr.apl::percoit_allocations_familiales(entity_ref("urn:law:examples:fr:garnier:menage"), true) { origin case_input; }
+    // зона II, метрополия
+    assert "al-zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::ZONE_II) { origin case_input; }
+    assert "al-territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::METROPOLE) { origin case_input; }
+    // пара, трое иждивенцев, годовые ресурсы
+    assert "al-situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::COUPLE) { origin case_input; }
+    assert "al-pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:garnier:menage"), 3) { origin case_input; }
+    assert "al-ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:garnier:menage"), 24600.00 EUR) { origin case_input; }
+    // основная плата за дом из пяти комнат, без колокации, обычное жильё, без RLS
+    assert "al-loyer": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:garnier:menage"), 1320.00 EUR) { origin case_input; }
+    assert "al-mode": fr.apl::mode_location(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOCATION_SEULE) { origin case_input; }
+    assert "al-forme": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:garnier:menage"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+    assert "al-rls": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:garnier:menage"), 0 EUR) { origin case_input; }
+    // ни AAH, ни AEEH
+    assert "al-aah": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:garnier:menage"), false) { origin case_input; }
+    // касса — должник жилищной помощи
+    assert "al-caf": fr.apl::organisme_debiteur(entity_ref("urn:law:examples:fr:garnier:caf"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // основное место проживания
+    assert "al-residence": fr.apl::occupation_residence_principale(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // въезд 14 марта, заявление 20 марта, вне изъятий R. 823-11
+    assert "al-conditions": fr.apl::date_conditions_reunies(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-14) { origin case_input; }
+    assert "al-demande": fr.apl::date_demande(entity_ref("urn:law:examples:fr:garnier:menage"), @2026-03-20) { origin case_input; }
+    assert "al-hors-hebergement": fr.apl::hors_hebergement_temporaire_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    assert "al-hors-insalubrite": fr.apl::hors_insalubrite_peril_823_11(entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    // частный владелец дома
+    assert "al-bailleur": fr.apl::bailleur_du_menage(entity_ref("urn:law:examples:fr:garnier:bailleur"), entity_ref("urn:law:examples:fr:garnier:menage")) { origin case_input; }
+    assert "al-role": fr.apl::role_tiers(entity_ref("urn:law:examples:fr:garnier:bailleur"), fr.apl::BAILLEUR) { origin case_input; }
+}

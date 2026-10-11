@@ -1,0 +1,57 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.fr.apl.douzieme_sans_arrondi",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.apl"
+    },
+    {
+      "features": [],
+      "from": "fr.apl",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.tax.income_for_apl"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [
+    {
+      "artifactHash": "sha256:10e0d7ee05977e960728581e910cfa6617f61d28c9cd1db0316aa884bb9a5fdc",
+      "features": [
+        "core-executable",
+        "law.params/0.1"
+      ],
+      "name": "fr.apl",
+      "namespace": "urn:fr:corpus:clir:apl",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.apl/0.1.0",
+      "sourceHash": "sha256:ea2faf25ad33778f60e5580372d3fd20e907dafd18e2c354aeac75b50bed50b1",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:e74037d1684240c1bdcabc34d84818596bb8938431f3ab442e3c49e7b167f4ee",
+      "features": [
+        "core-executable",
+        "law.params/0.1"
+      ],
+      "name": "fr.tax.income_for_apl",
+      "namespace": "urn:fr:tax:clir:income-for-apl",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.tax.income_for_apl/0.1.0",
+      "sourceHash": "sha256:e19ede606475e04fb0d0d84808f51af8d4f562c48706358d1d41e6229459c537",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:1088d5d9f01c1da008ec2db457db4c6db677b35cfbd2c905440dd03e7748b657",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:b248005edd880225ee14407091a77fa6930b6eb15d87c676b455ea2d4c620c71",
+    "name": "examples.fr.apl.douzieme_sans_arrondi",
+    "namespace": "urn:law:examples:fr:apl:douzieme-sans-arrondi",
+    "sourceHash": "sha256:e8efcc0cab85d24fa896d3879de2c094271296614268b08b0cf99b53aa70e866",
+    "version": "0.1.0"
+  }
+}

@@ -1,0 +1,19 @@
+language "law.core" version "0.2";
+package examples.fr.apl.editions_2021 version "0.1.0";
+namespace "urn:law:examples:fr:apl:editions-2021";
+
+case TenantDecembre {
+    context { legal_time @2020-12-15; decision_time @2020-12-15T12:00:00+01:00; knowledge_time @2020-12-15T12:00:00+01:00; timezone "Europe/Paris"; interpretation fr.apl::PpPlancherFinal; }
+    assert "input-0": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:cnaf:tenant")) { origin case_input; }
+    assert "input-1": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::ALS) { origin case_input; }
+    assert "input-2": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::ZONE_III) { origin case_input; }
+    assert "input-3": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::PERSONNE_SEULE) { origin case_input; }
+    assert "input-4": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:cnaf:tenant"), 0) { origin case_input; }
+    assert "input-5": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:cnaf:tenant"), 306 EUR) { origin case_input; }
+    assert "input-6": fr.apl::mode_location(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::LOCATION_SEULE) { origin case_input; }
+    assert "input-7": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+    assert "input-8": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:cnaf:tenant"), 0 EUR) { origin case_input; }
+    assert "input-9": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:cnaf:tenant"), false) { origin case_input; }
+    assert "input-10": fr.apl::territoire(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::METROPOLE) { origin case_input; }
+    assert "input-11": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:cnaf:tenant"), 12000 EUR) { origin case_input; }
+}

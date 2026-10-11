@@ -1,0 +1,47 @@
+language "law.core" version "0.2";
+package examples.fr.apl.editions_2021 version "0.1.0";
+namespace "urn:law:examples:fr:apl:editions-2021";
+
+case TenantJanvier {
+    context { legal_time @2021-01-15; decision_time @2021-01-15T12:00:00+01:00; knowledge_time @2021-01-15T12:00:00+01:00; timezone "Europe/Paris"; interpretation fr.apl::PpPlancherFinal; }
+    assert "input-0": fr.apl::secteur_locatif(entity_ref("urn:law:examples:fr:cnaf:tenant")) { origin case_input; }
+    assert "input-1": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::ALS) { origin case_input; }
+    assert "input-2": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::ZONE_III) { origin case_input; }
+    assert "input-3": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::PERSONNE_SEULE) { origin case_input; }
+    assert "input-4": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:cnaf:tenant"), 0) { origin case_input; }
+    assert "input-5": fr.apl::loyer_principal(entity_ref("urn:law:examples:fr:cnaf:tenant"), 306 EUR) { origin case_input; }
+    assert "input-6": fr.apl::mode_location(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::LOCATION_SEULE) { origin case_input; }
+    assert "input-7": fr.apl::forme_logement(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::LOGEMENT_ORDINAIRE) { origin case_input; }
+    assert "input-8": fr.apl::reduction_loyer_solidarite(entity_ref("urn:law:examples:fr:cnaf:tenant"), 0 EUR) { origin case_input; }
+    assert "input-9": fr.apl::beneficiaire_aah_ou_aeeh(entity_ref("urn:law:examples:fr:cnaf:tenant"), false) { origin case_input; }
+    assert "input-10": fr.apl::territoire(entity_ref("urn:law:examples:fr:cnaf:tenant"), fr.apl::METROPOLE) { origin case_input; }
+    assert "input-11": fr.apl::membre_du_menage(entity_ref("urn:law:examples:fr:cnaf:tenant"), entity_ref("urn:law:examples:fr:cnaf:tenant-person")) { origin case_input; }
+    assert "input-12": fr.apl::allocataire_ou_conjoint_ressources(entity_ref("urn:law:examples:fr:cnaf:tenant"), entity_ref("urn:law:examples:fr:cnaf:tenant-person")) { origin case_input; }
+    assert "input-13": fr.tax.income_for_apl::periode_evaluee(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2019-12-01, @2020-12-01) { origin case_input; }
+    assert "input-14": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2019-12-01, 1000 EUR) { origin case_input; }
+    assert "input-15": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2019-12-01, 0 EUR) { origin case_input; }
+    assert "input-16": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-01-01, 1000 EUR) { origin case_input; }
+    assert "input-17": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-01-01, 0 EUR) { origin case_input; }
+    assert "input-18": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-02-01, 1000 EUR) { origin case_input; }
+    assert "input-19": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-02-01, 0 EUR) { origin case_input; }
+    assert "input-20": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-03-01, 1000 EUR) { origin case_input; }
+    assert "input-21": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-03-01, 0 EUR) { origin case_input; }
+    assert "input-22": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-04-01, 1000 EUR) { origin case_input; }
+    assert "input-23": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-04-01, 0 EUR) { origin case_input; }
+    assert "input-24": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-05-01, 1000 EUR) { origin case_input; }
+    assert "input-25": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-05-01, 0 EUR) { origin case_input; }
+    assert "input-26": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-06-01, 2000 EUR) { origin case_input; }
+    assert "input-27": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-06-01, 0 EUR) { origin case_input; }
+    assert "input-28": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-07-01, 2000 EUR) { origin case_input; }
+    assert "input-29": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-07-01, 0 EUR) { origin case_input; }
+    assert "input-30": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-08-01, 2000 EUR) { origin case_input; }
+    assert "input-31": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-08-01, 0 EUR) { origin case_input; }
+    assert "input-32": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-09-01, 2000 EUR) { origin case_input; }
+    assert "input-33": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-09-01, 0 EUR) { origin case_input; }
+    assert "input-34": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-10-01, 2000 EUR) { origin case_input; }
+    assert "input-35": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-10-01, 0 EUR) { origin case_input; }
+    assert "input-36": fr.tax.income_for_apl::salaire_net_mensuel_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-11-01, 2000 EUR) { origin case_input; }
+    assert "input-37": fr.tax.income_for_apl::indemnite_chomage_nette_mensuelle_avant_abattement(entity_ref("urn:law:examples:fr:cnaf:tenant-person"), @2020-11-01, 0 EUR) { origin case_input; }
+    assert "input-38": fr.apl::pas_de_rsa(entity_ref("urn:law:examples:fr:cnaf:tenant"), entity_ref("urn:law:examples:fr:cnaf:tenant-person")) { origin case_input; }
+    assert "input-39": fr.apl::pas_de_pension_etablie(entity_ref("urn:law:examples:fr:cnaf:tenant"), entity_ref("urn:law:examples:fr:cnaf:tenant-person")) { origin case_input; }
+}

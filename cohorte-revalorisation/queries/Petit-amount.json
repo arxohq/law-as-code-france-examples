@@ -1,0 +1,23 @@
+{
+  "queryId": "amount-Petit",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:pf-af#montant_mensuel_af",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:cnaf:cohort:petit"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "545.10",
+        "currency": "EUR"
+      }
+    ]
+  }
+}

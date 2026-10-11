@@ -1,0 +1,30 @@
+language "law.core" version "0.2";
+package examples.fr.apl.foyer_coefficient_k version "0.1.0";
+namespace "urn:law:examples:fr:apl:foyer-coefficient-k";
+
+// Вымышленное дело: пара без иждивенцев, конвенционированная résidence
+// autonomie (logement-foyer общего типа, D. 832-25 1°), зона II, метрополия,
+// redevance 495 €, ресурсы 12 500 € в год, март 2026 года. Плафон E, доли N,
+// транши E0, r, cm, потолок K, минорацию, минимум чистого расхода, порог
+// выплаты и ставку CRDS дело НЕ называет — их берёт барем канона.
+// PpPlancherFinal выбрано лишь потому, что группа SensMinimumPp канона требует
+// выбора в каждом деле; в расчёт фойе оно не входит.
+case CoupleResidenceAutonomie {
+    context {
+        legal_time @2026-03-10;
+        decision_time @2026-03-10T12:00:00+01:00;
+        knowledge_time @2026-03-10T12:00:00+01:00;
+        timezone "Europe/Paris";
+        interpretation fr.apl::PpPlancherFinal;
+    }
+
+    assert "secteur": fr.apl::secteur_logement_foyer(entity_ref("urn:law:examples:fr:apl:foyer-k:menage")) { origin case_input; }
+    assert "aide": fr.apl::aide_demandee(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::APL) { origin case_input; }
+    assert "type-foyer": fr.apl::type_logement_foyer(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::GENERAL) { origin case_input; }
+    assert "zone": fr.apl::zone_du_logement(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::ZONE_II) { origin case_input; }
+    assert "territoire": fr.apl::territoire(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::METROPOLE) { origin case_input; }
+    assert "situation": fr.apl::situation_familiale(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), fr.apl::COUPLE) { origin case_input; }
+    assert "pac": fr.apl::personnes_a_charge(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 0) { origin case_input; }
+    assert "redevance": fr.apl::redevance(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 495.00 EUR) { origin case_input; }
+    assert "ressources": fr.apl::ressources_du_menage(entity_ref("urn:law:examples:fr:apl:foyer-k:menage"), 12500.00 EUR) { origin case_input; }
+}

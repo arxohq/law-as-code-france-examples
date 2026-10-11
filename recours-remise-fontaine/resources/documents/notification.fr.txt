@@ -1,0 +1,465 @@
+# Question et réponse
+
+> **Avertissement.** Résultat de l’exécution d’un modèle formalisé sur les données du dossier. Ce document n’est ni le texte officiel de l’acte ni un avis juridique et n’a aucune portée juridique autonome. Un écart entre ce texte et le document de réponse relève du modèle de verbalisation ; il ne constitue pas une autre réponse.
+
+## Question
+
+Est-il établi que « montant mensuel total dû au ménage pour le mois (brut, avant CRDS) » (p : « fontaine-remise », montant : 349.06 EUR) ?
+
+## Réponse
+
+L’évaluation est terminée.
+Il est établi que « montant mensuel total dû au ménage pour le mois (brut, avant CRDS) » (p : « fontaine-remise », montant : 349.06 EUR) ; le contraire n’est pas établi.
+
+## Fondements
+
+- 1. Selon la règle « total mensuel dû: mensuel + complément + forfait du ménage (brut, avant CRDS) » : « montant mensuel total dû au ménage pour le mois (brut, avant CRDS) » (p : « fontaine-remise », montant : 349.06 EUR)
+  fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 » — « Article L521-1 Les allocations familiales sont dues à partir du deuxième enfant à charge. Une allocation forfaitaire par enfant d'un montant fixé par décret est versée pendant un an à la personne ou au ménage qui assume … »
+  fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 » — « Article L521-1 Les allocations familiales sont dues à partir du deuxième enfant à charge. Une allocation forfaitaire par enfant d'un montant fixé par décret est versée pendant un an à la personne ou au ménage qui assume … »
+  fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 » — « Article L521-1 Les allocations familiales sont dues à partir du deuxième enfant à charge. Une allocation forfaitaire par enfant d'un montant fixé par décret est versée pendant un an à la personne ou au ménage qui assume … »
+  fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » — « Article L521-1 Les allocations familiales sont dues à partir du deuxième enfant à charge. Une allocation forfaitaire par enfant d'un montant fixé par décret est versée pendant un an à la personne ou au ménage qui assume … »
+  fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » — « Article L521-1 Les allocations familiales sont dues à partir du deuxième enfant à charge. Une allocation forfaitaire par enfant d'un montant fixé par décret est versée pendant un an à la personne ou au ménage qui assume … »
+   - 2. Selon la règle « bande 1: aucun dépassement de plafond, complément nul » : « complément dégressif mensuel, 0 hors zone d'écrêtement (D. 521-1, II) » (p : « fontaine-remise », montant : 0 EUR)
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 » (texte cité ci-dessus)
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 » (texte cité ci-dessus)
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 » (texte cité ci-dessus)
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » (texte cité ci-dessus)
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » (texte cité ci-dessus)
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 » — « Article D521-1 I.-Pour l'application de l'article L. 521-1, le montant des allocations familiales et de la majoration pour âge prévue à l'article L. 521-3 est défini selon le barème suivant : 1° Lorsque le ménage ou la p… »
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 » — « Article D521-1 I.-Pour l'application de l'article L. 521-1, le montant des allocations familiales et de la majoration pour âge prévue à l'article L. 521-3 est défini selon le barème suivant : 1° Lorsque le ménage ou la p… »
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 » — « Article D521-1 I.-Pour l'application de l'article L. 521-1, le montant des allocations familiales et de la majoration pour âge prévue à l'article L. 521-3 est défini selon le barème suivant : 1° Lorsque le ménage ou la p… »
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » — « Article D521-1 I.-Pour l'application de l'article L. 521-1, le montant des allocations familiales et de la majoration pour âge prévue à l'article L. 521-3 est défini selon le barème suivant : 1° Lorsque le ménage ou la p… »
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » — « Article D521-1 I.-Pour l'application de l'article L. 521-1, le montant des allocations familiales et de la majoration pour âge prévue à l'article L. 521-3 est défini selon le barème suivant : 1° Lorsque le ménage ou la p… »
+      - 3. Selon la règle « ressources au plus égales au plafond du I: bande 1 (D. 521-1, I, 1°) » : « tranche du barème applicable au ménage (D. 521-1, I) » (p : « fontaine-remise », bande : « BANDE_1 »)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 » (texte cité ci-dessus)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 » (texte cité ci-dessus)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 » (texte cité ci-dessus)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » (texte cité ci-dessus)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » (texte cité ci-dessus)
+        fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 » (texte cité ci-dessus)
+        fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 » (texte cité ci-dessus)
+        fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 » (texte cité ci-dessus)
+        fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » (texte cité ci-dessus)
+        fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » (texte cité ci-dessus)
+         - 4. Selon la règle « plafond du I applicable: plafond de base et majoration par enfant revalorisés au 1er janvier (III automatique depuis le décret 2021-1955), tels que publiés » : « plafond du I de D. 521-3 applicable au ménage (plafond de base majoré par enfant à charge) » (p : « fontaine-remise », montant : 86644 EUR)
+           fondement : fragment article/D521-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » — « Article D521-3 I.-Le plafond prévu au 1° du I des articles D. 521-1 et D. 521-2 est fixé à 55 950 euros. Il est majoré de 5 595 euros par enfant à charge. II.-Le plafond prévu au 2° du I des articles D. 521-1 et D. 521-2… »
+           fondement : fragment article/D521-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » — « Article D521-3 I.-Le plafond prévu au 1° du I des articles D. 521-1 et D. 521-2 est fixé à 55 950 euros. Il est majoré de 5 595 euros par enfant à charge. II.-Le plafond prévu au 2° du I des articles D. 521-1 et D. 521-2… »
+            - 5. Fait du dossier : « nombre d'enfants à charge retenu par la caisse (contrat d'entrée: cohérent avec les faits enfant_ouvre_droit) » (p : « fontaine-remise », n : 3)
+            - 6. Fait du dossier : « plafond de base de la première tranche revalorisé au 1er janvier de l'année du droit, tel que publié (D. 521-3, I et III) » (p : « fontaine-remise », montant : 66652 EUR)
+            - 7. Fait du dossier : « majoration du plafond par enfant à charge revalorisée au 1er janvier de l'année du droit, telle que publiée (D. 521-3, III) » (p : « fontaine-remise », montant : 6664 EUR)
+         - 8. Selon la règle « les ressources du ménage sont appréciées dans les conditions des articles R. 532-3 à R. 532-8 » : « ressources retenues pour le barème (D. 521-4) » (p : « fontaine-remise », montant : 40000 EUR)
+           fondement : fragment article/D521-4 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 » — « Article D521-4 Pour l'application des articles D. 521-1 et D. 521-2, les ressources du ménage ou de la personne sont appréciées dans les conditions prévues aux articles R. 532-3 à R. 532-8. »
+           fondement : fragment article/D521-4 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 » — « Article D521-4 Pour l'application des articles D. 521-1 et D. 521-2, les ressources du ménage ou de la personne sont appréciées dans les conditions prévues aux articles R. 532-3 à R. 532-8. »
+           fondement : fragment article/D521-4 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 » — « Article D521-4 Pour l'application des articles D. 521-1 et D. 521-2, les ressources du ménage ou de la personne sont appréciées dans les conditions prévues aux articles R. 532-3 à R. 532-8. »
+           fondement : fragment article/D521-4 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » — « Article D521-4 Pour l'application des articles D. 521-1 et D. 521-2, les ressources du ménage ou de la personne sont appréciées dans les conditions prévues aux articles R. 532-3 à R. 532-8. »
+           fondement : fragment article/D521-4 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » — « Article D521-4 Pour l'application des articles D. 521-1 et D. 521-2, les ressources du ménage ou de la personne sont appréciées dans les conditions prévues aux articles R. 532-3 à R. 532-8. »
+            - 9. Fait du dossier : « ressources annuelles du ménage appréciées selon R. 532-3 à R. 532-8 (D. 521-4) » (p : « fontaine-remise », montant : 40000 EUR)
+   - 10. Selon la règle « mensuel brut: taux du rang par la base, majorations à taux plein et demi-taux comprises » : « allocations familiales mensuelles brutes du ménage, majorations comprises, hors forfait (D. 521-1) » (p : « fontaine-remise », montant : 349.06 EUR) — fondements : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 », fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 », fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 », fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 », fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 », fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 », fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 », fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 », fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 », fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 »
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 » (texte cité ci-dessus)
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 » (texte cité ci-dessus)
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 » (texte cité ci-dessus)
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » (texte cité ci-dessus)
+     fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » (texte cité ci-dessus)
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 » (texte cité ci-dessus)
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 » (texte cité ci-dessus)
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 » (texte cité ci-dessus)
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » (texte cité ci-dessus)
+     fondement : fragment article/D521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » (texte cité ci-dessus)
+      - voir l’étape 3
+      - 11. Selon la règle « les allocations familiales sont dues à partir du deuxième enfant à charge » : « droit aux allocations familiales ouvert pour le mois (L. 521-1 al. 1, L. 755-12) » (p : « fontaine-remise »)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-07-01 » (texte cité ci-dessus)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2015-10-16 » (texte cité ci-dessus)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-09-30 » (texte cité ci-dessus)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-01-01 » (texte cité ci-dessus)
+        fondement : fragment article/L521-1 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-03-01 » (texte cité ci-dessus)
+         - 12. Fait du dossier : « territoire de résidence du ménage » (p : « fontaine-remise », t : « METROPOLE »)
+         - voir l’étape 5
+      - voir l’étape 5
+      - 13. Fait du dossier : « base mensuelle retenue pour le mois du droit (arrêté, montant non épinglé) » (p : « fontaine-remise », montant : 478.16 EUR)
+      - 14. Fait du dossier : « nombre de majorations pour âge à taux plein comptées pour le mois (contrat d'entrée: cohérent avec les montants par enfant) » (p : « fontaine-remise », n : 0)
+      - 15. Fait du dossier : « nombre de majorations pour âge à demi-taux (garde alternée, R. 521-4) comptées pour le mois » (p : « fontaine-remise », n : 0)
+   - 16. Fait du dossier : « total des allocations forfaitaires du ménage pour le mois (0 en l'absence de forfait) » (p : « fontaine-remise », montant : 0 EUR)
+
+## Avertissements
+
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 5.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 9.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+
+---
+
+*Question `urn:law:examples:fr:apl:recours-remise-fontaine#case/FontaineRemise/query/benefit-af` · résultat `urn:result:recours-remise-fontaine#case/FontaineRemise/query/benefit-af` · empreinte du résultat `sha256:c10c7fede752956fc14bf32ce8abc920f324883c4e88b612542d510931f91c97` · programme `sha256:0915a6c9e725d6398f2db3349ed244b1b7001cf80549764da00dfabd5d415d65` · verbalisation law.verb.fr@0.2.0 · langue fr · détail : arbre complet*
+
+
+# Question et réponse
+
+> **Avertissement.** Résultat de l’exécution d’un modèle formalisé sur les données du dossier. Ce document n’est ni le texte officiel de l’acte ni un avis juridique et n’a aucune portée juridique autonome. Un écart entre ce texte et le document de réponse relève du modèle de verbalisation ; il ne constitue pas une autre réponse.
+
+## Question
+
+Est-il établi que « accuse de reception du dans les quinze jours R. 825-3 » (m : « fontaine-remise », d : 2026-04-30) ?
+
+## Réponse
+
+L’évaluation est terminée.
+Il est établi que « accuse de reception du dans les quinze jours R. 825-3 » (m : « fontaine-remise », d : 2026-04-30) ; le contraire n’est pas établi.
+
+## Fondements
+
+- 1. Selon la règle « remise sans contestation du bien-fonde : accuse de reception dans les quinze jours » : « accuse de reception du dans les quinze jours R. 825-3 » (m : « fontaine-remise », d : 2026-04-30)
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 11 janvier 2020 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 1er janvier 2021 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 5 avril 2023 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 1er septembre 2023 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 31 décembre 2023 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 1er juillet 2026 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+   - 2. Fait du dossier : « demande de remise gracieuse d'un trop-percu d'aide ou de prime, date de depot (fait de dossier R. 825-3) » (m : « fontaine-remise », d : 2026-04-15)
+   - 3. Fait du dossier : « bien-fonde de la dette non conteste avec la demande de remise (constat R. 825-3 al. 1) » (m : « fontaine-remise »)
+
+## Avertissements
+
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 5.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 9.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+
+---
+
+*Question `urn:law:examples:fr:apl:recours-remise-fontaine#case/FontaineRemise/query/remise-receipt` · résultat `urn:result:recours-remise-fontaine#case/FontaineRemise/query/remise-receipt` · empreinte du résultat `sha256:dccd02fa609400854a75659a13bc8f44bde09a30ee4affbed7274a5d317e5c9e` · programme `sha256:0915a6c9e725d6398f2db3349ed244b1b7001cf80549764da00dfabd5d415d65` · verbalisation law.verb.fr@0.2.0 · langue fr · détail : arbre complet*
+
+
+# Question et réponse
+
+> **Avertissement.** Résultat de l’exécution d’un modèle formalisé sur les données du dossier. Ce document n’est ni le texte officiel de l’acte ni un avis juridique et n’a aucune portée juridique autonome. Un écart entre ce texte et le document de réponse relève du modèle de verbalisation ; il ne constitue pas une autre réponse.
+
+## Question
+
+Est-il établi que « decision sur la remise due dans les deux mois R. 825-3 » (m : « fontaine-remise », d : 2026-06-15) ?
+
+## Réponse
+
+L’évaluation est terminée.
+Il est établi que « decision sur la remise due dans les deux mois R. 825-3 » (m : « fontaine-remise », d : 2026-06-15) ; le contraire n’est pas établi.
+
+## Fondements
+
+- 1. Selon la règle « remise sans contestation du bien-fonde : decision dans les deux mois » : « decision sur la remise due dans les deux mois R. 825-3 » (m : « fontaine-remise », d : 2026-06-15)
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 11 janvier 2020 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 1er janvier 2021 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 5 avril 2023 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 1er septembre 2023 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 31 décembre 2023 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+  fondement : fragment article/R825-3 de la version « Code de la construction et de l'habitation, champ retenu du paquet, état en vigueur à compter du 1er juillet 2026 » — « Article R825-3 Lorsqu'il est saisi d'une demande de remise gracieuse de dette relative à un trop-perçu au titre d'une aide personnelle au logement ou d'une prime de déménagement, sans que soit contesté le bien-fondé de l… »
+   - 2. Fait du dossier : « demande de remise gracieuse d'un trop-percu d'aide ou de prime, date de depot (fait de dossier R. 825-3) » (m : « fontaine-remise », d : 2026-04-15)
+   - 3. Fait du dossier : « bien-fonde de la dette non conteste avec la demande de remise (constat R. 825-3 al. 1) » (m : « fontaine-remise »)
+
+## Avertissements
+
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 5.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 9.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+
+---
+
+*Question `urn:law:examples:fr:apl:recours-remise-fontaine#case/FontaineRemise/query/remise-decision` · résultat `urn:result:recours-remise-fontaine#case/FontaineRemise/query/remise-decision` · empreinte du résultat `sha256:e1165d2b7bb177da4029bec08b807c5336e5e8d5a6bcd93701d916b388bed69a` · programme `sha256:0915a6c9e725d6398f2db3349ed244b1b7001cf80549764da00dfabd5d415d65` · verbalisation law.verb.fr@0.2.0 · langue fr · détail : arbre complet*
+
+
+# Question et réponse
+
+> **Avertissement.** Résultat de l’exécution d’un modèle formalisé sur les données du dossier. Ce document n’est ni le texte officiel de l’acte ni un avis juridique et n’a aucune portée juridique autonome. Un écart entre ce texte et le document de réponse relève du modèle de verbalisation ; il ne constitue pas une autre réponse.
+
+## Question
+
+Est-il établi que « recouvrement suspendu pendant le recours (L. 845-3 al. 2) » (d : « fontaine-applicant ») ?
+
+## Réponse
+
+L’évaluation est terminée.
+Il est établi que « recouvrement suspendu pendant le recours (L. 845-3 al. 2) » (d : « fontaine-applicant ») ; le contraire n’est pas établi.
+
+## Fondements
+
+- 1. Selon la règle « réclamation/remise/recours: caractère suspensif (L. 845-3 al. 2) » : « recouvrement suspendu pendant le recours (L. 845-3 al. 2) » (d : « fontaine-applicant »)
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-01-01 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. Toute réclamation dirigée contre une décision de récupération de l'indu, le dépôt d'une demande de remise ou de ré… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-03-25 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. Toute réclamation dirigée contre une décision de récupération de l'indu, le dépôt d'une demande de remise ou de ré… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2021-06-01 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. Toute réclamation dirigée contre une décision de récupération de l'indu, le dépôt d'une demande de remise ou de ré… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2022-03-21 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. Toute réclamation dirigée contre une décision de récupération de l'indu, le dépôt d'une demande de remise ou de ré… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2023-12-31 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. Toute réclamation dirigée contre une décision de récupération de l'indu, le dépôt d'une demande de remise ou de ré… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2024-01-01 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. En contrepartie des frais de gestion qu'il engage lorsque le versement indu est le résultat d'une fraude du bénéfi… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2024-07-01 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. En contrepartie des frais de gestion qu'il engage lorsque le versement indu est le résultat d'une fraude du bénéfi… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2025-01-01 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. En contrepartie des frais de gestion qu'il engage lorsque le versement indu est le résultat d'une fraude du bénéfi… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2025-02-28 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. En contrepartie des frais de gestion qu'il engage lorsque le versement indu est le résultat d'une fraude du bénéfi… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2025-03-31 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. En contrepartie des frais de gestion qu'il engage lorsque le versement indu est le résultat d'une fraude du bénéfi… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-04-01 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. En contrepartie des frais de gestion qu'il engage lorsque le versement indu est le résultat d'une fraude du bénéfi… »
+  fondement : fragment article/L845-3 de la version « Code de la sécurité sociale, état en vigueur à compter du 2026-06-27 » — « Article L845-3 Tout paiement indu de prime d'activité est récupéré par l'organisme chargé de son service. En contrepartie des frais de gestion qu'il engage lorsque le versement indu est le résultat d'une fraude du bénéfi… »
+   - 2. Fait du dossier : « paiement indu constaté (L. 845-3 al. 1; fait retenu) » (d : « fontaine-applicant », montant : 600 EUR)
+   - 3. Fait du dossier : « réclamation/remise/recours pendant contre la récupération (L. 845-3 al. 2; fait retenu) » (d : « fontaine-applicant »)
+
+## Avertissements
+
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 5.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 9.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+
+---
+
+*Question `urn:law:examples:fr:apl:recours-remise-fontaine#case/FontaineRemise/query/recovery-suspension` · résultat `urn:result:recours-remise-fontaine#case/FontaineRemise/query/recovery-suspension` · empreinte du résultat `sha256:d8ea2786b41f543b7950e2a1ad73e67374efebcd5af86ff6cc88cb1fc019617f` · programme `sha256:0915a6c9e725d6398f2db3349ed244b1b7001cf80549764da00dfabd5d415d65` · verbalisation law.verb.fr@0.2.0 · langue fr · détail : arbre complet*
+
+
+# Question et réponse
+
+> **Avertissement.** Résultat de l’exécution d’un modèle formalisé sur les données du dossier. Ce document n’est ni le texte officiel de l’acte ni un avis juridique et n’a aucune portée juridique autonome. Un écart entre ce texte et le document de réponse relève du modèle de verbalisation ; il ne constitue pas une autre réponse.
+
+## Question
+
+Quelles positions juridiques sont nées dans le dossier et quel est leur statut ?
+
+## Réponse
+
+L’évaluation est terminée.
+Applicabilité : applicable.
+Statut normatif : « active ».
+- appui du statut « créée » : établi ; nœuds de preuve : 1 validité : oui
+- appui du statut « active » : établi ; nœuds de preuve : 1 validité : oui
+- appui du statut « créée » : établi ; nœuds de preuve : 1 validité : oui
+- appui du statut « active » : établi ; nœuds de preuve : 1 validité : oui
+
+## Positions juridiques
+
+- Obligation selon le modèle « l'organisme accuse reception de la demande de remise non contestee » : titulaire — « fund » ; statut « active ». Bénéficiaire — « fontaine-remise ».
+  - Objectif de maintien : la condition suivante doit être maintenue : il est établi que « accuse de reception de la demande de remise (execution) » (m : « fontaine-remise ») ; période concernée : à compter du 2021-01-01.
+- Obligation selon le modèle « le directeur statue sur la remise non contestee apres avis de la commission » : titulaire — « fund » ; statut « active ». Bénéficiaire — « fontaine-remise ».
+  - Objectif de maintien : la condition suivante doit être maintenue : il est établi que « decision sur la remise gracieuse (execution) » (m : « fontaine-remise ») ; période concernée : à compter du 2021-01-01.
+
+## Fondements
+
+- 1. Une position juridique est née : position selon le modèle « l'organisme accuse reception de la demande de remise non contestee »
+   - 2. Fait du dossier : « demande de remise gracieuse d'un trop-percu d'aide ou de prime, date de depot (fait de dossier R. 825-3) » (m : « fontaine-remise », d : 2026-04-15)
+   - 3. Fait du dossier : « bien-fonde de la dette non conteste avec la demande de remise (constat R. 825-3 al. 1) » (m : « fontaine-remise »)
+   - 4. Fait du dossier : « l'organisme est débiteur de l'aide du ménage » (o : « fund », m : « fontaine-remise »)
+- 5. Une position juridique est née : position selon le modèle « le directeur statue sur la remise non contestee apres avis de la commission »
+   - voir l’étape 2
+   - voir l’étape 3
+   - voir l’étape 4
+   - 6. Fait du dossier : « avis rendu par la commission de recours amiable R. 825-2 (fait de dossier) » (m : « fontaine-remise »)
+
+Fondements de l’appui du statut « créée » (établi) :
+- voir l’étape 1
+
+Fondements de l’appui du statut « active » (établi) :
+- voir l’étape 1
+
+Fondements de l’appui du statut « créée » (établi) :
+- voir l’étape 5
+
+Fondements de l’appui du statut « active » (établi) :
+- voir l’étape 5
+
+## Avertissements
+
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 5.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 16.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 14.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 13.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 12.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 3.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 1.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 9.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 7.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 6.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+- Information `EDITION_NOT_APPLICABLE` (le message du moteur en russe est conservé dans le document de réponse) Nœuds associés : 4.
+
+---
+
+*Question `urn:law:examples:fr:apl:recours-remise-fontaine#case/FontaineRemise/query/positions` · résultat `urn:result:recours-remise-fontaine#case/FontaineRemise/query/positions` · empreinte du résultat `sha256:8babe09f1cac0c2279a92685f2c9fc08c6fd0c09fc33cbe3a22bd502586124e8` · programme `sha256:0915a6c9e725d6398f2db3349ed244b1b7001cf80549764da00dfabd5d415d65` · verbalisation law.verb.fr@0.2.0 · langue fr · détail : arbre complet*

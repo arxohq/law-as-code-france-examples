@@ -1,0 +1,64 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.fr.apl.editions_2021",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.apl"
+    },
+    {
+      "features": [],
+      "from": "examples.fr.apl.editions_2021",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.tax.income_for_apl"
+    },
+    {
+      "features": [],
+      "from": "fr.apl",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "fr.tax.income_for_apl"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [
+    {
+      "artifactHash": "sha256:10e0d7ee05977e960728581e910cfa6617f61d28c9cd1db0316aa884bb9a5fdc",
+      "features": [
+        "core-executable",
+        "law.params/0.1"
+      ],
+      "name": "fr.apl",
+      "namespace": "urn:fr:corpus:clir:apl",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.apl/0.1.0",
+      "sourceHash": "sha256:ea2faf25ad33778f60e5580372d3fd20e907dafd18e2c354aeac75b50bed50b1",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:e74037d1684240c1bdcabc34d84818596bb8938431f3ab442e3c49e7b167f4ee",
+      "features": [
+        "core-executable",
+        "law.params/0.1"
+      ],
+      "name": "fr.tax.income_for_apl",
+      "namespace": "urn:fr:tax:clir:income-for-apl",
+      "registryId": "arxo",
+      "resolverUri": "registry://arxo/fr.tax.income_for_apl/0.1.0",
+      "sourceHash": "sha256:e19ede606475e04fb0d0d84808f51af8d4f562c48706358d1d41e6229459c537",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:64c07bf70c25d01177b1348ad7dbef35c77e79bb9be317af1726cece5b21264b",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:cbde31ef921d972f01b2ac4e782ee5411c5cccc4d65cecca1cf3d9ca6693773a",
+    "name": "examples.fr.apl.editions_2021",
+    "namespace": "urn:law:examples:fr:apl:editions-2021",
+    "sourceHash": "sha256:8cf1265ac57c7f7dc7c206ebe05e454d7c2164a6a50c24c0b1b9aaa97c708357",
+    "version": "0.1.0"
+  }
+}

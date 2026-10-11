@@ -1,0 +1,40 @@
+# Пакет-дело §168.4: пристойность жилья семьи Garnier — урок 9 курса «Law as Code
+# in Practice: French Family Benefits (CNAF)». Три дела одних фактов жилья (те же,
+# что в famille-trois-enfants-loyer): суждения органа ещё нет (канал §47.3,
+# L. 822-9 — запрос к OrganismePayeur), орган признал жильё пристойным, орган
+# констатировал непристойность (консервация пособия L. 843-1 и сл.). Норм нет:
+# правила — у канона fr.apl.
+[package]
+name = "examples.fr.apl.logement_decent_garnier"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:fr:apl:logement-decent-garnier"
+
+[dependencies]
+"fr.apl" = "0.1.0"
+"fr.pf.cmg" = "0.1.0"
+
+[[cases]]
+name = "DecenceEnAttente"
+path = "cases/decence-en-attente.lawcase"
+
+[[cases]]
+name = "DecenceReconnue"
+path = "cases/decence-reconnue.lawcase"
+
+[[cases]]
+name = "NonDecenceConstatee"
+path = "cases/non-decence-constatee.lawcase"
+
+# Двойник §267 вопросов check.py (те же факты и ожидания).
+[[tests]]
+family = "examples.fr.apl.logement_decent_garnier#cas"
+regression = false
+suites = ["tests/logement-decent-garnier.lawtest"]
+world = ["examples.fr.apl.logement_decent_garnier", "fr.apl", "fr.pf.cmg"]
+
+[metadata]
+act = "fr-apl-examples-logement-decent-garnier"
+
+[authoring]
+local_imports = "explicit"

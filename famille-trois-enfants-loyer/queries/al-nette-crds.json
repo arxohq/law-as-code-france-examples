@@ -1,0 +1,23 @@
+{
+  "queryId": "al-nette-crds",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:apl#aide_nette_precompte_crds",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:garnier:menage"
+      },
+      {
+        "currency": "EUR",
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "189.00318525"
+      }
+    ]
+  }
+}

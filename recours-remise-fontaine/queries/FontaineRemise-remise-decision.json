@@ -1,0 +1,22 @@
+{
+  "queryId": "remise-decision",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:apl#statuer_due_avant_remise",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:cnaf:fontaine-remise"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Date"
+        },
+        "value": "2026-06-15"
+      }
+    ]
+  }
+}

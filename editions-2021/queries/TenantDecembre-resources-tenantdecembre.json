@@ -1,0 +1,23 @@
+{
+  "queryId": "resources-tenantdecembre",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:fr:corpus:clir:apl#ressources_retenues",
+    "args": [
+      {
+        "kind": "entity_ref",
+        "id": "urn:law:examples:fr:cnaf:tenant"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Money"
+        },
+        "value": "12000",
+        "currency": "EUR"
+      }
+    ]
+  }
+}

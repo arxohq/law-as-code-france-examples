@@ -1,0 +1,29 @@
+[package]
+name = "examples.fr.apl.editions_2021"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:fr:apl:editions-2021"
+
+[dependencies]
+"fr.apl" = "0.1.0"
+"fr.tax.income_for_apl" = "0.1.0"
+
+[[cases]]
+name = "TenantDecembre"
+path = "cases/TenantDecembre.lawcase"
+
+[[cases]]
+name = "TenantJanvier"
+path = "cases/TenantJanvier.lawcase"
+
+[[tests]]
+family = "examples.fr.apl.editions_2021#draft"
+regression = false
+suites = ["tests/draft.lawtest"]
+world = ["examples.fr.apl.editions_2021", "fr.apl"]
+
+[metadata]
+act = "fr-apl-examples-editions-2021"
+
+[authoring]
+local_imports = "explicit"
