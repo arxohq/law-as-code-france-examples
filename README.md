@@ -1,12 +1,19 @@
 # Law as Code in Practice: French Family Benefits — case packages
 
+> **First of all, a demonstration.** These case packages show what modelling legislation with Arxo can
+> do: fictional families' files answered by executable French family-benefit canons, with the source of
+> every answer. They do not claim legal accuracy or completeness, they are not an implementation by or
+> for the Cnaf or any French authority, and their answers are not legal advice. For a real file, rely
+> on the official texts and the competent bodies.
+
 The ten case packages of the book *Law as Code in Practice: French Family Benefits*
 (Law as Code by Country · Volume 1). Each folder holds one fictional file: the facts, the legal date,
 the readings it selects, saved questions (`queries/`) and declared scenarios (`tests/`). The rules are
 not copied here: `law.lock` pins the French canons by exact version and hash, and `law install` fetches
 them from the canon repository [`arxohq/arxo-cnaf`](https://github.com/arxohq/arxo-cnaf).
 
-**Status: private staging.** This repository and `arxohq/arxo-cnaf` become public with the book.
+Published with the book at https://books.arxo.io; the canons are in the public repository
+[`arxohq/arxo-cnaf`](https://github.com/arxohq/arxo-cnaf).
 
 ## Run an example
 
@@ -14,8 +21,8 @@ You need the `law` command-line tool, version 0.2.2 or later (`npm i -g @arxo/cl
 `law.core/0.2.11`.
 
 ```sh
-git clone git@github.com:arxohq/arxo-cnaf.git
-git clone git@github.com:arxohq/law-as-code-france-examples.git examples
+git clone https://github.com/arxohq/arxo-cnaf.git
+git clone https://github.com/arxohq/law-as-code-france-examples.git examples
 cd examples/prime-naissance-moreau
 law install --registry arxo=../../arxo-cnaf/registry
 law ask . --case PlafondEgal --query-json queries/montant.json --out "$(mktemp -d)"
