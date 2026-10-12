@@ -1,57 +1,67 @@
-# La décence du logement des Garnier : qui décide, et ce qui suit chaque réponse
+# Decent housing: when an authority must decide
 
-Trois dossiers d'une famille fictive sur le canon épinglé `fr.apl` (`0.1.0`), avec
-la politique de délais publique `fr.pf.cmg::CMG_MOIS_CALENDAIRE`. Mêmes faits de
-logement que le dossier `prestations-versement/examples/famille-trois-enfants-loyer` :
-Nadia et Thomas Garnier, trois enfants à charge, perçoivent les allocations
-familiales ; depuis le 14 mars 2026 ils louent à un bailleur privé une maison de
-cinq pièces en zone II, 1 320 EUR par mois, ressources 24 600 EUR par an ; demande
-d'ALF le 20 mars. Le paquet-cas sert la leçon 9 du cours *Law as Code in Practice:
-French Family Benefits (CNAF)*.
+[All examples](../README.md#browse-the-cases) · Book chapter 9
 
-L'article L. 822-9 du code de la construction et de l'habitation exige un
-logement décent pour ouvrir droit à l'aide. La décence est appréciée par
-l'organisme payeur : dans `fr.apl`, c'est le canal de jugement
-`logement_decent` (`authority OrganismePayeur`), et non un fait du dossier.
+**Can the model establish entitlement before the paying body has judged the dwelling decent?**
 
-| Dossier (`--case`) | Date | Réponse de l'organisme |
-|---|---|---|
-| `DecenceEnAttente` | 15 avril 2026 | pas encore de réponse |
-| `DecenceReconnue` | 15 avril 2026 | logement décent (`origin adjudicated`) |
-| `NonDecenceConstatee` | 15 mai 2026 | logement non décent, constat du 28 avril 2026 (`origin adjudicated` et `constat_non_decence`) |
+> Fictional teaching example from an independent Arxo model; not a Cnaf implementation or a legal decision. See the [demonstration limits](../README.md).
 
-## Ce que répond le canon
+## Facts and assumptions
 
-| Question | `DecenceEnAttente` | `DecenceReconnue` | `NonDecenceConstatee` |
-|---|---|---|---|
-| droit ouvert (`droit_ouvert`) | `NEITHER`, `REQUIRES_JUDGMENT`, demande `logement_decent` → `OrganismePayeur` | `TRUE_ONLY` — `DroitOuvert`, L. 822-2 et L. 822-9 | `NEITHER`, `COMPUTED`, sans demande |
-| aide calculée, 189,95295 EUR (`aide_mensuelle`) | `TRUE_ONLY` | `TRUE_ONLY` | `TRUE_ONLY` |
-| allocation conservée (`conservation_en_cours`) | `NEITHER` | `NEITHER` | `TRUE_ONLY` — `ConservationDeclencheeALF`, L. 843-1 |
-| loyer dû réduit, 1 130,04705 EUR (`loyer_du_reduit`) | `NEITHER` | `NEITHER` | `TRUE_ONLY` — `LoyerReduitConservation`, L. 843-1 |
-| positions actives | ménage : pièces justificatives, interdiction du cumul des logements (R. 821-1) ; bailleur : attestation de décence (R. 823-2) | + caisse : verser l'aide due (`VerserAideTheoriqueDue`) | caisse : notifier le constat au propriétaire (L. 843-1), informer le locataire (R. 843-3) et le propriétaire des aides (R. 843-4) ; ménage : immunité contre la résiliation du bail (L. 843-1) ; bailleur : attestation (R. 823-2) |
+Nadia and Thomas Garnier have three dependent children. Since 14 March 2026 they rent a five-room house in zone II for €1,320 monthly, with €24,600 annual resources; the ALF application is dated 20 March. Three files vary the supplied authority judgment. These are the housing facts of the [Garnier benefits example](../famille-trois-enfants-loyer/).
 
-Dans `NonDecenceConstatee` le même acte de l'organisme est saisi deux fois :
-comme réponse négative au jugement de décence, et comme constat daté de
-L. 843-1 qui déclenche la conservation. L'allocation conservée
-(`allocation_due_conservation`) est le montant communiqué au locataire ; le
-dossier reprend le calcul de la leçon 4 (189,95295 EUR), avec toutes ses
-décimales. La caisse n'est tenue de verser l'aide que dans
-`DecenceReconnue`.
+Inspect the [dated case files](cases/) and [registered cases](law.toml).
 
-## Lancer
+## Run the example
 
-Le paquet-cas est membre du workspace : les dépendances se résolvent par nom.
+Complete the root [Quick start](../README.md#quick-start) first. From the
+`examples` repository root, run:
 
 ```sh
-python3 corpus/laws/fr/apl/examples/logement-decent-garnier/check.py --law <binaire law>
+cd logement-decent-garnier
+law install --registry arxo=../../arxo-cnaf/registry
+result_dir="$(mktemp -d)"
+law ask . --case DecenceEnAttente \
+  --query-json queries/droit-ouvert.json \
+  --out "$result_dir"
+printf 'Saved answer: %s/result.json\n' "$result_dir"
+law test . --json
 ```
 
-`check.py` pose neuf questions et trois questions de positions, vérifie le
-statut, les règles appliquées, la demande adressée à l'organisme et les
-positions actives ou absentes, puis lance `law test` sur le jumeau
-`tests/logement-decent-garnier.lawtest`.
+The scenario check should exit with code `0` and report no failed scenarios.
 
-**Piège (11 octobre 2026).** Une copie locale de dépendances hors git,
-`examples/recours-remise-fontaine/deps/`, fait échouer un nouvel abaissement de
-`fr.apl` (`LDC-E8704` : la découverte des ressources descend dans les
-paquets-cas imbriqués). Dans un checkout propre, le dossier s'exécute.
+## Expected answer
+
+`REQUIRES_JUDGMENT / NEITHER`: the model requests `logement_decent` from `OrganismePayeur`. The housing-aid amount can be calculated while entitlement remains unresolved.
+
+Open `$result_dir/result.json`: read `results` for the status and follow
+`proofGraph` for the derivation. See [how to read an answer](../README.md#how-to-read-an-answer).
+
+## Try another case
+
+```sh
+law ask . --case DecenceReconnue --query-json queries/droit-ouvert.json
+law ask . --case NonDecenceConstatee --query-json queries/conservation.json
+law ask . --case NonDecenceConstatee --query-json queries/loyer-reduit.json
+```
+
+Recognition gives `TRUE_ONLY` for entitlement. Non-decency gives `TRUE_ONLY` for conservation and for reduced rent of **€1,130.04705**. The computed housing-aid amount **€189.95295** is supported in all three files; only `DecenceReconnue` activates the duty to pay it.
+
+## Sources and limits
+
+The judgment is an authority response, not an ordinary case-input assertion (CCH L. 822-9). In `NonDecenceConstatee`, the same fictional act is supplied both as a negative judgment and as a dated finding of 28 April 2026; the latter triggers conservation under L. 843-1.
+
+<details>
+<summary>Calculation details and recorded context</summary>
+
+Pending judgment: supporting documents, the ban on combining housing claims
+(R. 821-1) and the landlord’s decency attestation (R. 823-2) remain active.
+Recognition adds `VerserAideTheoriqueDue`. A non-decency finding adds duties
+to notify the owner (L. 843-1), inform the tenant (R. 843-3) and owner
+(R. 843-4), and the household’s immunity against lease termination (L. 843-1).
+Inspect [positions.json](queries/positions.json) in each file.
+The cases use `fr.pf.cmg::CMG_MOIS_CALENDAIRE` for calendar-month deadlines.
+
+</details>
+
+Need help running the commands? See [Troubleshooting](../README.md#troubleshooting).

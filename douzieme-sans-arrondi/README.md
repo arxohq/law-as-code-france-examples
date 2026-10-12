@@ -1,70 +1,70 @@
-# Diviser par douze sans règle d'arrondi : refus, puis lecture nommée
+# Division by twelve: a missing rounding choice
 
-Deux dossiers aux mêmes faits sur le canon épinglé `fr.apl@0.1.0` (APL,
-secteur logement-foyer). Une personne seule, sans personne à charge, vit dans
-un logement-foyer conventionné de type général en zone II ; redevance 430 EUR,
-ressources 9 600 EUR par an, mois du droit mars 2026. Le paquet-cas ne porte que
-ces faits et les questions ; les règles et le barème viennent du canon.
+[All examples](../README.md#browse-the-cases) · Book chapter 7
 
-L'article D. 832-26 du code de la construction et de l'habitation calcule
-l'équivalence de loyer minimale E0 : « Le résultat est majoré du produit d'un
-montant forfaitaire par le nombre de parts “ N ”, le total étant ensuite divisé
-par douze » (version applicable en mars 2026). Ici le
-total vaut 1 977,17096 EUR et son douzième, 164,764246666… EUR, n'a pas
-d'écriture décimale finie. Le texte ne dit pas comment l'arrondir.
+**What happens when a required division has no finite decimal result and the text supplies no rounding rule?**
 
-## Les deux dossiers
+> Fictional teaching example from an independent Arxo model; not a Cnaf implementation or a legal decision. See the [demonstration limits](../README.md).
 
-| Dossier (`--case`) | Lecture choisie | E0 | Aide mensuelle |
-|---|---|---|---|
-| `ResidentSansLecture` | aucune lecture d'arrondi | refus `RUNTIME_ERROR`, `INEXACT_DIVISION` | pas de montant (`NEITHER`), même refus |
-| `ResidentLectureD82` | `fr.apl::ArrondiCentimeHalfUp` (D-82, pratique de la CNAF : au centime, demi supérieur) | **164,76 EUR** `TRUE_ONLY` | **132,664624 EUR** `TRUE_ONLY` ; après CRDS 132,00130088 EUR |
+## Facts and assumptions
 
-Avec la lecture, Af = K × (E − E0) = 0,52 × (430 − 164,76) = 137,9248 EUR ; les
-règles appliquées sont `EquivalenceLoyerMinimaleArrondie` et
-`ArrondiIntermediaireCentime`, ancrées à D. 832-26 : la réponse dit quelle
-lecture a tranché. Sans lecture, le canon ne choisit pas à la place du texte :
-il refuse de diviser et nomme la cause. Le calcul à la main, tranche par
-tranche, est dans [`sources/WITNESS.md`](sources/WITNESS.md).
+Two files with the same facts: a single person with no dependants, conventioned general-type housing residence in zone II, €430 monthly fee, €9,600 annual resources, March 2026. The total used for E0 is €1,977.17096; divided by twelve it is €164.764246666… .
 
-Le même silence se retrouve ailleurs : la moyenne trimestrielle de l'article
-R. 262-7 du code de l'action sociale et des familles (lecture
-`MoyenneArrondieCentime` de `fr.minima.ressources`) et le douzième du complément
-dégressif de D. 521-1 II du code de la sécurité sociale (lecture
-`ArrondiLignesDss` de `fr.pf.af`). Ce paquet montre un seul de ces points.
+Inspect the [dated case files](cases/) and [registered cases](law.toml).
 
-## Lancer depuis la racine du dépôt
+## Run the example
 
-Le paquet-cas est membre du workspace : les dépendances se résolvent par nom
-parmi les membres, sans `law.lock` ni `deps/`. Utilisez un binaire `law` déjà
-construit (le lanceur `./law` recompile le moteur à chaque appel).
+Complete the root [Quick start](../README.md#quick-start) first. From the
+`examples` repository root, run:
 
 ```sh
-LAW_BIN=<binaire law> ./law ask corpus/laws/fr/apl/examples/douzieme-sans-arrondi \
-  --case ResidentSansLecture \
-  --query-json corpus/laws/fr/apl/examples/douzieme-sans-arrondi/queries/equivalence-loyer-minimale.json
-
-LAW_BIN=<binaire law> ./law ask corpus/laws/fr/apl/examples/douzieme-sans-arrondi \
-  --case ResidentLectureD82 \
-  --query-json corpus/laws/fr/apl/examples/douzieme-sans-arrondi/queries/equivalence-loyer-minimale.json
-
-python3 corpus/laws/fr/apl/examples/douzieme-sans-arrondi/check.py --law <binaire law>
+cd douzieme-sans-arrondi
+law install --registry arxo=../../arxo-cnaf/registry
+result_dir="$(mktemp -d)"
+law ask . --case ResidentLectureD82 \
+  --query-json queries/equivalence-loyer-minimale.json \
+  --out "$result_dir"
+printf 'Saved answer: %s/result.json\n' "$result_dir"
+law test . --json
 ```
 
-`check.py` pose six questions (deux sans lecture, quatre avec), vérifie le
-statut, le code `INEXACT_DIVISION` du refus, les règles appliquées, K = 0,52
-dans le graphe de preuve et l'ancre D. 832-26 de la règle sous lecture, puis
-lance `law test` sur le jumeau `tests/douzieme-sans-arrondi.lawtest`.
+The scenario check should exit with code `0` and report no failed scenarios.
 
-**État d'exécution, 10 octobre 2026.** `check.py --law <law>` passe 7/7
-avec le binaire `law` construit depuis le commit d25481bde0 : les 6 questions
-`law ask` et l'étape `law test` (code de sortie 0). Le jumeau `.lawtest` est
-exécuté par `law test` : `[tests].world` commence par ce paquet-cas lui-même,
-suivi du canon `fr.apl`.
+## Expected answer
 
-## Limites
+`COMPUTED / TRUE_ONLY`: **E0 = €164.76** under the selected reading `fr.apl::ArrondiCentimeHalfUp`.
 
-La lecture D-82 repose sur la pratique de la CNAF, non sur le texte : c'est un
-choix nommé du dossier, pas une règle du canon. `PpPlancherFinal` est choisi
-dans les deux dossiers seulement parce que le groupe `SensMinimumPp` du canon
-exige un choix ; il n'entre pas dans ce calcul.
+Open `$result_dir/result.json`: read `results` for the status and follow
+`proofGraph` for the derivation. See [how to read an answer](../README.md#how-to-read-an-answer).
+
+## Try another case
+
+```sh
+law ask . --case ResidentSansLecture \
+  --query-json queries/equivalence-loyer-minimale.json
+law ask . --case ResidentLectureD82 --query-json queries/aide-mensuelle.json
+```
+
+Without a rounding reading, expect `RUNTIME_ERROR`, `INEXACT_DIVISION` and `NEITHER`: the model refuses to invent an exact decimal result. With the named reading, the monthly-aid claim **€132.664624** is `TRUE_ONLY`. The refusal is an intended outcome of this example; it is not an installation failure.
+
+## Sources and limits
+
+The selected rounding reading is an explicit model choice, not a rounding rule stated by D. 832-26 or a verified statement of Cnaf practice. `PpPlancherFinal` is selected in both files because `SensMinimumPp` requires a choice; it does not enter this calculation.
+
+Follow the [manual calculation and source references](sources/WITNESS.md).
+
+<details>
+<summary>Calculation details and recorded context</summary>
+
+With the selected reading, Af = 0.52 × (430 − 164.76) = **€137.9248**;
+after deductions, monthly aid is **€132.664624**, and after CRDS
+**€132.00130088**. The proof uses `EquivalenceLoyerMinimaleArrondie` and
+`ArrondiIntermediaireCentime`, anchored to D. 832-26.
+
+Related division choices occur in CASF R. 262-7 (`MoyenneArrondieCentime`,
+`fr.minima.ressources`) and CSS D. 521-1 II (`ArrondiLignesDss`, `fr.pf.af`).
+This package demonstrates only the housing-residence example.
+
+</details>
+
+Need help running the commands? See [Troubleshooting](../README.md#troubleshooting).
