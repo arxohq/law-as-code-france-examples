@@ -1,0 +1,15 @@
+# NOTICE
+
+Code, models, case files, questions, scenarios and saved answers in this repository:
+Apache License 2.0 (see `LICENSE`). Every case file is fictional.
+
+One third-party text is pinned here and is not covered by the code licence:
+
+| File | Text | Source | Terms |
+|---|---|---|---|
+| `recours-remise-fontaine/sources/crpa/R311-3-1-2.txt` | Code des relations entre le public et l'administration, article R311-3-1-2 | Légifrance, https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000034195881 (retrieved 11 October 2026; `provenance.json`) | Unofficial copy; reuse of French legal texts under the Licence Ouverte / Open Licence 2.0 (Etalab) |
+
+The canons these cases import, with their own pinned texts and terms, are in
+`arxohq/arxo-cnaf` (see its `NOTICE`).
+
+Not affiliated with the French State, the Cnaf or the Caf network.
