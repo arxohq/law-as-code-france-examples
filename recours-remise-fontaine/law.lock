@@ -79,7 +79,7 @@
       "version": "0.1.0"
     },
     {
-      "artifactHash": "sha256:2b3fef81028b71a2304f2746874b3c05d9cd9b2e11f17e973ecf6108f54fe787",
+      "artifactHash": "sha256:3375cf3b5b00a1d575a318fbc0518822942121eed9d7774eab6cfaa4340ca782",
       "features": [
         "core-executable",
         "law.params/0.1"
@@ -92,7 +92,7 @@
       "version": "0.1.0"
     },
     {
-      "artifactHash": "sha256:2400e15f9d527fe8732d8de92d160080ee5b847134deb000b75c0485693812f7",
+      "artifactHash": "sha256:50cf379479532a718fcfac550b94f2a406f48abf65817900d46941f88a3c6be1",
       "features": [
         "core-executable"
       ],
@@ -101,7 +101,7 @@
       "questionCatalogHash": "sha256:a36ed063d353c05f36ef53149872ff46772a17d4abe5bcf223b56aacb32400bf",
       "registryId": "arxo",
       "resolverUri": "registry://arxo/fr.pf.core/0.1.0",
-      "sourceHash": "sha256:607e7dd41a935fc92738203be32c99e26deee699256205ee28ac3d2acc22e6f1",
+      "sourceHash": "sha256:0ea334884e9b2b983554957f16209b30984dcef53e22c57881f65f4bfdda3c75",
       "version": "0.1.0"
     },
     {
@@ -142,7 +142,7 @@
       "version": "0.1.0"
     }
   ],
-  "resolutionHash": "sha256:baec898801eff810f635ab490bb57a9571b3635cf047425e70309773b1e381ac",
+  "resolutionHash": "sha256:155635ae23e7446ed216a7effd4b013b8d1c3db8cdfc54ff24a6efde57f8aee1",
   "resources": [
     {
       "capability": "evidence",
@@ -153,10 +153,10 @@
     }
   ],
   "root": {
-    "artifactHash": "sha256:fd571b9afd5dd45e17df8febdfad49994a5c27482378b0f9a6a3602d966164cd",
+    "artifactHash": "sha256:78fb789720ad1ef6df185e95e90131d76b31db046b1182ff4e39152285e2d028",
     "name": "examples.fr.apl.recours_remise_fontaine",
     "namespace": "urn:law:examples:fr:apl:recours-remise-fontaine",
-    "sourceHash": "sha256:2fa60d38af0c001a17ea901ad541d1e5eb9c5790822fa1eeb83b92e638ba6d84",
+    "sourceHash": "sha256:9dac9e6ae5c868ada9d48fe3df8836f09efa3a24fc99a08c74373e84ffaf81a9",
     "version": "0.1.0"
   }
 }
