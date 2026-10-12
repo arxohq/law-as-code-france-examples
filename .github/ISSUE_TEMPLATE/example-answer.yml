@@ -1,0 +1,61 @@
+name: Report an unexpected example answer
+description: Report an answer, execution error or guide mismatch using an included fictional case.
+title: "[Example] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You do not need to know the rule language. Select an included fictional example and describe what happened. These are teaching models; different selected readings can produce different answers.
+  - type: dropdown
+    id: example
+    attributes:
+      label: Example folder
+      options:
+        - prime-naissance-moreau
+        - famille-trois-enfants-loyer
+        - editions-2021
+        - cohorte-revalorisation
+        - foyer-coefficient-k
+        - douzieme-sans-arrondi
+        - logement-decent-garnier
+        - famille-dans-le-temps
+        - recours-remise-fontaine
+        - recours-indu-cra
+    validations:
+      required: true
+  - type: input
+    id: question
+    attributes:
+      label: Case name and saved question
+      placeholder: PlafondEgal, queries/montant.json
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: CLI version and operating system
+      description: Copy the first line of law --version and name your operating system.
+      placeholder: law 0.2.2, macOS arm64
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Command and received answer or error
+      description: Include the command, relevant result fields or error message, and any changed inputs or selected readings.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected answer
+      description: Explain what you expected and why, or identify the guide section that does not match.
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Supporting source
+      description: Add an article, edition, publication date or source link when reporting a modelling disagreement.
+    validations:
+      required: false

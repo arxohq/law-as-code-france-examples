@@ -1,4 +1,11 @@
+[![French Family Benefits — Executable Examples. Run a case. Trace the answer.](assets/banner.png)](https://books.arxo.io/law-as-code-france/)
+
 # French Family Benefits — Executable Examples
+
+[![Case packages: 10](https://img.shields.io/badge/case_packages-10-1b5277)](#browse-the-cases)
+[![Declared case scenarios: 38](https://img.shields.io/badge/declared_case_scenarios-38-1b5277)](#verify-the-recorded-answer)
+[![CLI: law 0.2.2](https://img.shields.io/badge/CLI-law_0.2.2-1b5277)](#quick-start)
+[![Licence: Apache-2.0](https://img.shields.io/badge/licence-Apache--2.0-59636e)](LICENSE)
 
 Explore ten fictional family files: run the rules, compare answers, and trace
 their reasoning to published French legal sources.
@@ -37,6 +44,61 @@ Answer:        Established — TRUE_ONLY
 (BMAF) and a €30,000 base ceiling. They are not the published annual amounts
 for this family. The [manual calculation](prime-naissance-moreau/sources/WITNESS.md)
 shows how the model obtains the €35,841 ceiling and €919 grant.
+
+### Change one input, compare the answers
+
+| Moreau file | Annual income | Entitlement claim | What changes |
+|---|---|---|---|
+| `PlafondEgal` | €35,841 | `TRUE_ONLY`; the grant claim of €919 is also supported | Equality satisfies the ceiling condition. |
+| `PlafondDepasse` | €35,841.01 | `NEITHER` | An excess of one cent prevents entitlement from being derived. |
+| `RessourcesAbsentes` | Not supplied | `NEITHER` | The model cannot establish the income comparison. |
+
+All three are completed evaluations (`COMPUTED`). The last two have the same
+truth status for different reasons. A missing conclusion is not automatically
+a proved denial: the [Moreau guide](prime-naissance-moreau/README.md#try-another-case)
+includes a question explaining the missing income.
+
+### Follow the proof to the source
+
+[![Recorded Moreau proof: five supplied inputs feed the ceiling, entitlement, amount and attribution rules; the €919 claim is TRUE_ONLY.](assets/moreau-proof.svg)](assets/moreau-proof.svg)
+
+The diagram groups the five supplied facts and follows the actual premise
+links in the [recorded proof graph](prime-naissance-moreau/runs/plafond-egal/result.json).
+The article labels come from the graph and the rules in its
+[saved program snapshot](prime-naissance-moreau/runs/plafond-egal/request.json).
+Open the diagram to enlarge it. Its [generator](tools/render-readme-proof.py)
+reads those saved files; it does not recalculate the benefit.
+
+### A calculated amount can still need a person's decision
+
+In the [decent-housing example](logement-decent-garnier/), the same household
+facts support a housing-aid amount of **€189.95295**. Opening the right also
+depends on the paying body's judgment about the dwelling:
+
+| Fictional authority response | Amount claim | Entitlement claim |
+|---|---|---|
+| No judgment yet (`DecenceEnAttente`) | `COMPUTED / TRUE_ONLY` | `REQUIRES_JUDGMENT / NEITHER`; request to `OrganismePayeur` |
+| Decency recognized (`DecenceReconnue`) | `COMPUTED / TRUE_ONLY` | `COMPUTED / TRUE_ONLY` |
+| Non-decency found (`NonDecenceConstatee`) | `COMPUTED / TRUE_ONLY` | `COMPUTED / NEITHER`; inspect conservation and reduced-rent consequences |
+
+The pending file asks for `logement_decent` rather than supplying that
+judgment itself. The guide shows how the authority responses change the
+result and active duties.
+
+### See where a selected reading enters
+
+The [division-by-twelve example](douzieme-sans-arrondi/) keeps the housing
+facts fixed and changes the case's rounding selection. The unrounded E0
+calculation gives €164.764246666… .
+
+| Case | Rounding reading | E0 query outcome |
+|---|---|---|
+| `ResidentSansLecture` | None | `RUNTIME_ERROR / NEITHER`, with `INEXACT_DIVISION` |
+| `ResidentLectureD82` | `fr.apl::ArrondiCentimeHalfUp` | `COMPUTED / TRUE_ONLY` for €164.76 |
+
+The named reading supplies the rounding choice left open by the captured
+text. Its presence is recorded in the case and the applied rule; the example
+does not claim that the reading is a rounding rule stated by D. 832-26.
 
 ## Quick start
 
@@ -105,18 +167,18 @@ to compare the one-cent excess and the missing-income file.
 Choose a question; each guide includes facts, commands, expected answers and limits.
 Chapter numbers follow the book.
 
-| Question | Example | Chapters |
+| Question | Example and result | Chapters |
 |---|---|---|
-| Does income exactly at the ceiling qualify? | [Moreau birth grant](prime-naissance-moreau/) — start here | 2, 5, 17, 18 |
-| How do several benefits apply to one family? | [Garnier: three children and rent](famille-trois-enfants-loyer/) | 0, 4 |
-| Which edition applies before and after a change? | [December 2020 and January 2021](editions-2021/) | 1 |
-| How do parameters affect several households? | [Revaluation cohort](cohorte-revalorisation/) | 3, 14 |
-| How is the housing-aid coefficient calculated? | [Housing aid and K](foyer-coefficient-k/) | 6 |
-| What happens when the text does not specify rounding? | [Division by twelve](douzieme-sans-arrondi/) | 7 |
-| When must a person decide before a right is established? | [Decent housing](logement-decent-garnier/) | 9 |
-| How do deductions and recovery change payments over time? | [One family, 2024–2026](famille-dans-le-temps/) | 11 |
-| What deadlines follow a request to remit a housing debt? | [Fontaine debt remission](recours-remise-fontaine/) | 12, 13 |
-| Is debt recovery suspended during an appeal? | [Overpayment appeal](recours-indu-cra/) | 12 |
+| Does income exactly at the ceiling qualify? | [Moreau birth grant](prime-naissance-moreau/) — entitlement, amount, explanation of missing income | 2, 5, 17, 18 |
+| How do several benefits apply to one family? | [Garnier: three children and rent](famille-trois-enfants-loyer/) — amounts, duties and effect dates | 0, 4 |
+| Which edition applies before and after a change? | [December 2020 and January 2021](editions-2021/) — resources under each edition | 1 |
+| How do parameters affect several households? | [Revaluation cohort](cohorte-revalorisation/) — family-allowance amounts and bands | 3, 14 |
+| How is the housing-aid coefficient calculated? | [Housing aid and K](foyer-coefficient-k/) — coefficient, formula and deductions | 6 |
+| What happens when the text does not specify rounding? | [Division by twelve](douzieme-sans-arrondi/) — refusal without a reading, amount with one | 7 |
+| When must a person decide before a right is established? | [Decent housing](logement-decent-garnier/) — judgment request and duties after the response | 9 |
+| How do deductions and recovery change payments over time? | [One family, 2024–2026](famille-dans-le-temps/) — seven monthly payment claims | 11 |
+| What deadlines follow a request to remit a housing debt? | [Fontaine debt remission](recours-remise-fontaine/) — acknowledgement and notification deadlines | 12, 13 |
+| Is debt recovery suspended during an appeal? | [Overpayment appeal](recours-indu-cra/) — recovery claims and their arguments | 12 |
 
 `famille-dans-le-temps` has saved questions but no declared scenarios.
 Its guide runs the monthly files with `law ask`.
@@ -182,6 +244,10 @@ A book command using `corpus/laws/fr/<canon>` refers to that canon's
 
 ## Verify the recorded answer
 
+Checked on **12 October 2026** with released `law` 0.2.2: **38 declared case
+scenarios passed**, and **37 saved questions matched the documented outcomes**.
+The four scenario files from the canon repository added 10 passing scenarios.
+
 Chapter 17's [saved bundle](prime-naissance-moreau/runs/plafond-egal/) can be
 replayed without installing the canons. Run this from `prime-naissance-moreau`:
 
@@ -231,3 +297,17 @@ passed their 10 scenarios. The recorded Chapter 17 answer replayed byte for byte
 
 Code and model: [Apache License 2.0](LICENSE). The pinned third-party text
 retains its own terms; see [NOTICE](NOTICE).
+
+## Found an unexpected answer?
+
+You do not need to know the rule language to
+[report an example result](https://github.com/arxohq/law-as-code-france-examples/issues/new?template=example-answer.yml).
+Use one of the included fictional files and tell us:
+
+1. Which example, case name and saved question you ran.
+2. Your `law --version` and the answer or error you received.
+3. What you expected, with a source reference or the guide section concerned.
+
+A different selected reading can explain a different answer. Include that
+selection so the report can distinguish an execution error, a documentation
+problem and a disagreement about the model's interpretation.

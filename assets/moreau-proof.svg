@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="846" viewBox="0 0 720 846" role="img" aria-labelledby="title desc">
+<title id="title">Moreau: the recorded proof of a €919 birth grant</title>
+<desc id="desc">Five supplied inputs feed four applied rules: construct the ceiling, establish entitlement, compute the amount, and attribute the grant at the examination date. The query is TRUE_ONLY. Source anchors are resolved from the recorded program.</desc>
+<metadata>{&quot;resultHash&quot;: &quot;sha256:3b041b7e8d987baafb0425b9fb2c0286f11c4d79c8eaa5519db62a2051e64ac2&quot;, &quot;programHash&quot;: &quot;sha256:d7740308956c4a9b279537698f7af3d448a2abb9b54e2f676fc16eacfaaf29aa&quot;, &quot;proofHash&quot;: &quot;sha256:8e1a63f24ed2fe5dc74d343293a3403fdc9aafe7de383c316b6820c591345f13&quot;, &quot;nodes&quot;: [&quot;urn:proof:apply:DroitPrimeNaissance:40aa5b7c99189bdb970b74f131a01a45acba0917231937b4b77885af46741895&quot;, &quot;urn:proof:apply:MontantPrimeNaissance:e3f52773383090bd730326e1b8690ed545b3b5cef9ba0129788cd90401e91d52&quot;, &quot;urn:proof:apply:PlafondPrimeConstruit:5a5649761163f6172f1baa38d9a915bbe49434bc48fa87cec5d87206738166d6&quot;, &quot;urn:proof:apply:PrimeNaissanceAttribuee:6c9a78a3c01c4358a13384a917ad6b9646dc9a0004285d1beb617ddc93109b81&quot;, &quot;urn:proof:assert:urn:law:examples:fr:pf:paje:prime-naissance-moreau#base&quot;, &quot;urn:proof:assert:urn:law:examples:fr:pf:paje:prime-naissance-moreau#bmaf&quot;, &quot;urn:proof:assert:urn:law:examples:fr:pf:paje:prime-naissance-moreau#examen&quot;, &quot;urn:proof:assert:urn:law:examples:fr:pf:paje:prime-naissance-moreau#grossesse&quot;, &quot;urn:proof:assert:urn:law:examples:fr:pf:paje:prime-naissance-moreau#ressources&quot;, &quot;urn:proof:query:prime-naissance-moreau#case/PlafondEgal/query/montant&quot;]}</metadata>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1b5277"/></marker></defs>
+<rect width="720" height="846" rx="12" fill="#fffaf3"/>
+<text x="40" y="42" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="30" fill="#172a3d" font-weight="700">Follow the recorded answer</text>
+<text x="40" y="70" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="18" fill="#42586b" font-weight="400">PlafondEgal · legal date 2025-07-15</text>
+<rect x="60" y="94" width="600" height="90" rx="8" fill="#f1e8dc"/>
+<text x="80" y="123" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" fill="#172a3d" font-weight="400">Teaching inputs: base €30,000 · income €35,841</text>
+<text x="80" y="150" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" fill="#172a3d" font-weight="400">BMAF €400 · expected child</text>
+<text x="80" y="175" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="18" fill="#42586b" font-weight="400">Examination date: 2025-07-01 · five inputs grouped</text>
+<path d="M60 139 H28 V269 H54" stroke="#1b5277" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M360 314 V348" stroke="#1b5277" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M60 139 H28 V399 H54" stroke="#1b5277" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M360 444 V478" stroke="#1b5277" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M60 139 H28 V529 H54" stroke="#1b5277" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M660 399 H692 V659 H666" stroke="#1b5277" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M360 574 V608" stroke="#1b5277" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M60 139 H28 V659 H54" stroke="#1b5277" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M360 704 V738" stroke="#1b5277" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="60" y="224" width="600" height="90" rx="8" fill="#ffffff" stroke="#b4c4cf"/>
+<text x="80" y="253" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="26" fill="#172a3d" font-weight="600">Ceiling constructed: €35,841</text>
+<text x="80" y="278" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="20" fill="#172a3d" font-weight="400">PlafondPrimeConstruit</text>
+<text x="80" y="303" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="20" fill="#42586b" font-weight="400">CSS D531-3-1</text>
+<rect x="60" y="354" width="600" height="90" rx="8" fill="#ffffff" stroke="#b4c4cf"/>
+<text x="80" y="383" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="26" fill="#172a3d" font-weight="600">Entitlement established</text>
+<text x="80" y="408" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="20" fill="#172a3d" font-weight="400">DroitPrimeNaissance</text>
+<text x="80" y="433" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="20" fill="#42586b" font-weight="400">CSS L531-2</text>
+<rect x="60" y="484" width="600" height="90" rx="8" fill="#ffffff" stroke="#b4c4cf"/>
+<text x="80" y="513" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="26" fill="#172a3d" font-weight="600">Grant amount: €919</text>
+<text x="80" y="538" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="20" fill="#172a3d" font-weight="400">MontantPrimeNaissance</text>
+<text x="80" y="563" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="20" fill="#42586b" font-weight="400">CSS D531-2</text>
+<rect x="60" y="614" width="600" height="90" rx="8" fill="#ffffff" stroke="#b4c4cf"/>
+<text x="80" y="643" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="26" fill="#172a3d" font-weight="600">Grant attributed: €919</text>
+<text x="80" y="668" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="20" fill="#172a3d" font-weight="400">PrimeNaissanceAttribuee</text>
+<text x="80" y="693" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="20" fill="#42586b" font-weight="400">CSS R531-1</text>
+<rect x="60" y="744" width="600" height="90" rx="8" fill="#e5eef4" stroke="#b4c4cf"/>
+<text x="80" y="773" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="26" fill="#172a3d" font-weight="600">Answer: TRUE_ONLY · €919</text>
+<text x="80" y="803" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="20" fill="#172a3d" font-weight="400">The claim in queries/montant.json is supported.</text>
+</svg>
