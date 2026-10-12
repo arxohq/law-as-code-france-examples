@@ -3,26 +3,28 @@
 The ten case packages of the book *Law as Code in Practice: French Family Benefits*
 (Law as Code by Country · Volume 1). Each folder holds one fictional file: the facts, the legal date,
 the readings it selects, saved questions (`queries/`) and declared scenarios (`tests/`). The rules are
-not copied here: `law.lock` pins the French canons by exact version and hash in the Arxo registry, and
-`law install` fetches them.
+not copied here: `law.lock` pins the French canons by exact version and hash, and `law install` fetches
+them from the canon repository [`arxohq/arxo-cnaf`](https://github.com/arxohq/arxo-cnaf).
 
-**Status: private staging.** The canons are published in the private registry `arxohq/registry-staging`
-with the layout of the public Arxo registry. Both repositories become public with the book.
+**Status: private staging.** This repository and `arxohq/arxo-cnaf` become public with the book.
 
 ## Run an example
 
+You need the `law` command-line tool, version 0.2.2 or later (`npm i -g @arxo/cli`); it executes
+`law.core/0.2.11`.
+
 ```sh
-git clone git@github.com:arxohq/registry-staging.git registry
+git clone git@github.com:arxohq/arxo-cnaf.git
 git clone git@github.com:arxohq/law-as-code-france-examples.git examples
 cd examples/prime-naissance-moreau
-law install --registry arxo=../../registry
+law install --registry arxo=../../arxo-cnaf/registry
 law ask . --case PlafondEgal --query-json queries/montant.json --out "$(mktemp -d)"
 law test . --json
 ```
 
 `law install` never picks versions: it restores exactly what `law.lock` pins and checks every hash.
-The `law` tool must execute `law.core/0.2.11`. `check.py` in each folder is the authors' check inside
-the Arxo repository and is not needed to run the examples.
+`check.py` in each folder is the authors' check inside the Arxo repository and is not needed to run
+the examples.
 
 ## Chapters and folders
 
@@ -39,26 +41,28 @@ the Arxo repository and is not needed to run the examples.
 | 12, 13 | `recours-remise-fontaine/` |
 | 12 | `recours-indu-cra/` |
 
+`famille-dans-le-temps/` declares no scenarios: Chapter 11 asks its monthly files one by one with
+`law ask`.
+
 ## Chapters 3, 8 and 10: the scenarios of the canons
 
-These chapters run scenarios of the canons themselves. The registry publishes each canon's sources with its
-pinned legal texts and a lock for this registry: copy it out, install, run.
+These chapters run scenarios of the canons themselves. In `arxo-cnaf` every canon is a folder of
+`packages/` with its dependencies pinned inside it — nothing to install:
 
 ```sh
-cp -R registry/p/fr.apl/0.1.0/src fr-apl
-cd fr-apl
-law install --registry arxo=../registry
+cd arxo-cnaf/packages/fr.apl
 law test . --file tests/finish-lecture-pp.lawtest --json
 ```
 
-| Chapter | Canon (`registry/p/…/0.1.0/src`) | Scenario file |
+| Chapter | Canon (`arxo-cnaf/packages/…`) | Scenario file |
 |---|---|---|
 | 3 | `fr.css.revalorisation` | `tests/bmaf-chaine-2026.lawtest` |
 | 8 | `fr.apl` | `tests/finish-lecture-pp.lawtest` |
 | 10 | `fr.pf.paje` | `tests/devoir-declarer-satisfait.lawtest`, `tests/devoir-declarer-envoi-tardif.lawtest` |
 
-In the book's commands the path `corpus/laws/fr/<canon>` of the Arxo repository is this copied folder. On
-12 October 2026 all four files passed from the registry.
+In the book's commands the path `corpus/laws/fr/<canon>` of the Arxo repository is this folder. The
+maintenance example of Chapter 10 (`fr.pf.maintenance`) runs only from a checkout of the Arxo
+repository.
 
 ## The saved answer of Chapter 17
 
@@ -78,5 +82,10 @@ law eval /tmp/plafond-egal
 shasum -a 256 runs/plafond-egal/result.json /tmp/plafond-egal/result.json
 ```
 
-Recorded on 12 October 2026 with `law` 0.2.1 built from the Arxo repository at commit `ba9c096f1d`; on that
-day the replay was byte for byte identical to the saved `result.json`.
+Recorded on 12 October 2026 with `law` 0.2.1 built from the Arxo repository at commit `ba9c096f1d`. Checked
+again the same day with the released `law` 0.2.2 from fresh clones of both repositories: the same three
+fingerprints, and the replay byte for byte identical to the saved `result.json`.
+
+## Licence
+
+Apache License 2.0 (`LICENSE`). The one pinned third-party text keeps its own terms — see `NOTICE`.
