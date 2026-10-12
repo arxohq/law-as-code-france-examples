@@ -1,40 +1,71 @@
-# Famille dans le temps — стадии выплаты 2024–2026
+# One family over time: payments from 2024 to 2026
 
-Вымышленное дело, семь вопросов. Брутто AF/ARS/PAJE, сумма RSA и сумма PA до
-взыскания предъявлены входами. Полная цепь logement → RSA → PA здесь не
-исполнялась; отдельный сценарий `tests/dossier-pa-cascade-2026-06.lawtest`
-не включён в приёмку этого дела.
+[All examples](../README.md#browse-the-cases) · Book chapter 11
 
-| Дата | Вопрос | Установленная сумма EUR |
-|---|---|---|
-| 2024-03 | af-net-2024-03 | 199 |
-| 2024-08 | ars-net-2024-08 | 398 |
-| 2025-07 | prime-net-2025-07 | 995 |
-| 2025-12 | af-rec-2025-12 | 238.80 |
-| 2026-03 | af-presc-2026-03 | 318.40 |
-| 2026-03 | rsa-carry-2026-03 | 420 |
-| 2026-06 | pa-rec-2026-06 | 210 |
+**How do contributions, recovery, debt carry-over and a supplied prescription finding affect payments?**
 
-**Прогон 11.10.2026:** `law` 0.1.12, семь `COMPUTED / TRUE_ONLY`, 7/7 PASS.
-Запись на 06.10 «not run» заменена этой адресной проверкой. Канон загружен из
-чистой копии выбранных исходников и workspace-зависимостей; ignored `deps/`
-общего дерева не удалялись. Бинарь копирован до работы, ядро не собиралось.
+> Fictional teaching example from an independent Arxo model; not a Cnaf implementation or a legal decision. See the [demonstration limits](../README.md).
+
+## Facts and assumptions
+
+Six monthly snapshots of a fictional household, with seven saved questions. Gross AF, ARS and PAJE birth-grant amounts, RSA allocation and activity-bonus amounts are supplied inputs before recovery.
+
+Inspect the [dated case files](cases/) and [registered cases](law.toml).
+
+## Run the example
+
+Complete the root [Quick start](../README.md#quick-start) first. From the
+`examples` repository root, run:
 
 ```sh
-python3 check.py --law /absolute/path/to/law --out /new/output/directory
+cd famille-dans-le-temps
+law install --registry arxo=../../arxo-cnaf/registry
+result_dir="$(mktemp -d)"
+law ask . --case Famille2024_03 \
+  --query-json queries/af-net-2024-03.json \
+  --out "$result_dir"
+printf 'Saved answer: %s/result.json\n' "$result_dir"
 ```
 
-Python 3.12+; `--out` сохраняет каждую полную запись запроса/ответа для аудита.
-В обычном checkout команда `law ask` может встретить старую ошибку обхода
-вложенных ignored deps; проверенная чистая копия и её происхождение описаны
-в журнале курса 11.10.2026.
+This package declares no scenarios. Use the monthly questions below for verification.
 
-Три старых rate-входа заменены текущими Money-входами удержания: 79.60,
-180 и70 EUR, с предъявленными фактами допустимости переносов долгов между
-пособиями. Ожидаемые суммы сохранены. Ставки удержания не вычислены этим делом.
-В мартовском файле `action_prescrite` — предъявленное заключение о давности,
-а не результат вычисления возраста долга. Идентичности связаны вызывающей
-стороной, автоматическое соединение между ними не заявляется.
+## Expected answer
 
-Ручная реплика — `sources/WITNESS.md`; правовой и редакционный разбор — урок11.
-Это независимая учебная модель, не реализация CNAF и не юридическое решение.
+`COMPUTED / TRUE_ONLY`: the net family-allowance claim of **€199** is supported.
+
+Open `$result_dir/result.json`: read `results` for the status and follow
+`proofGraph` for the derivation. See [how to read an answer](../README.md#how-to-read-an-answer).
+
+## Try another case
+
+| Case | Saved question | Established amount |
+|---|---|---|
+| `Famille2024_03` | [af-net-2024-03](queries/af-net-2024-03.json) | €199 |
+| `Famille2024_08` | [ars-net-2024-08](queries/ars-net-2024-08.json) | €398 |
+| `Famille2025_07` | [prime-net-2025-07](queries/prime-net-2025-07.json) | €995 |
+| `Famille2025_12` | [af-rec-2025-12](queries/af-rec-2025-12.json) | €238.80 |
+| `Famille2026_03` | [af-presc-2026-03](queries/af-presc-2026-03.json) | €318.40 |
+| `Famille2026_03` | [rsa-carry-2026-03](queries/rsa-carry-2026-03.json) | €420 |
+| `Famille2026_06` | [pa-rec-2026-06](queries/pa-rec-2026-06.json) | €210 |
+
+```sh
+law ask . --case Famille2025_12 --query-json queries/af-rec-2025-12.json
+law ask . --case Famille2026_03 --query-json queries/rsa-carry-2026-03.json
+```
+
+All seven saved amount claims expect `COMPUTED / TRUE_ONLY`.
+
+## Sources and limits
+
+This package does not execute the complete housing → RSA → activity-bonus chain. Deductions of €79.60, €180 and €70 and facts permitting debt carry-over are supplied; deduction rates are not calculated here. March’s `action_prescrite` is a supplied prescription conclusion, not a calculation of debt age. The caller links identities; no automatic joining is claimed.
+
+Follow the [manual calculation and source references](sources/WITNESS.md).
+
+<details>
+<summary>Calculation details and recorded context</summary>
+
+The author recorded seven passing monthly questions on `law` 0.1.12 on 11 October 2026. The separate engine-workspace scenario `dossier-pa-cascade-2026-06.lawtest` was not included in that case acceptance. This public package declares no scenarios: inspect the seven saved answers rather than expecting `law test` to check them.
+
+</details>
+
+Need help running the commands? See [Troubleshooting](../README.md#troubleshooting).

@@ -1,13 +1,55 @@
-# Sources et éditions — deux mois, deux références
+# Housing-aid resources: December 2020 and January 2021
 
-Deux locataires fictifs, décembre 2020 et janvier 2021. Les réponses concernent les ressources retenues (12000 / 16200 EUR), pas le montant de l’aide. Les faits diffèrent selon les données que demande chaque édition; ce n’est pas une variation de la date seule.
+[All examples](../README.md#browse-the-cases) · Book chapter 1
+
+**Which legal edition and resource inputs apply on each side of the January 2021 change?**
+
+> Fictional teaching example from an independent Arxo model; not a Cnaf implementation or a legal decision. See the [demonstration limits](../README.md).
+
+## Facts and assumptions
+
+Two fictional tenants: one file in December 2020 and another in January 2021. The supplied facts differ to meet each edition’s input requirements; this is not a change of date alone.
+
+Inspect the [dated case files](cases/) and [registered cases](law.toml).
+
+## Run the example
+
+Complete the root [Quick start](../README.md#quick-start) first. From the
+`examples` repository root, run:
 
 ```sh
-python3 check.py --law <chemin-absolu-vers-law>
+cd editions-2021
+law install --registry arxo=../../arxo-cnaf/registry
+result_dir="$(mktemp -d)"
+law ask . --case TenantDecembre \
+  --query-json queries/TenantDecembre-resources-tenantdecembre.json \
+  --out "$result_dir"
+printf 'Saved answer: %s/result.json\n' "$result_dir"
 law test . --json
 ```
 
-Exécution locale dans le checkout avec Python 3.12 ou supérieur et un binaire
-`law` sauvegardé. Les canons français ne sont pas encore publiés pour une
-installation indépendante. Les sources et la réplique sont dans `sources/`.
-Les résultats enregistrés en octobre 2026 ne remplacent pas une vérification juridique.
+The scenario check should exit with code `0` and report no failed scenarios.
+
+## Expected answer
+
+`COMPUTED / TRUE_ONLY`: the model establishes **€12,000** of resources for the December file.
+
+Open `$result_dir/result.json`: read `results` for the status and follow
+`proofGraph` for the derivation. See [how to read an answer](../README.md#how-to-read-an-answer).
+
+## Try another case
+
+```sh
+law ask . --case TenantJanvier \
+  --query-json queries/TenantJanvier-resources-tenantjanvier.json
+```
+
+The January file establishes **€16,200**, also `COMPUTED / TRUE_ONLY`. Compare the two [case files](cases/) and their dates, then follow the applied rules and edition references in each proof graph.
+
+## Sources and limits
+
+The questions concern resources taken into account, not the amount of housing aid. The two outputs do not isolate the effect of changing the legal date with all other facts held constant.
+
+Follow the [manual calculation and source references](sources/WITNESS.md).
+
+Need help running the commands? See [Troubleshooting](../README.md#troubleshooting).

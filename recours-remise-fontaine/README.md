@@ -1,42 +1,74 @@
-# FontaineRemise — remise неоспариваемого жилищного долга
+# Fontaine: a housing-debt remission request
 
-Отдельная вымышленная семья Fontaine (до 11.10.2026 — процедурная карточка Garnier): три ребёнка, ресурсы40000 EUR, без
-возрастных надбавок; AF349.06 EUR. Это не семья Garnier из уроков 0/4 с надбавкой
-и AF425.57 EUR. Карточки и расчётные факты не соединять.
+[All examples](../README.md#browse-the-cases) · Book chapters 12 and 13
 
-R.825-3 CCH: demande remise gracieuse при неоспариваемом основании долга;
-подтверждение получения за15 дней и уведомление решения за2 месяца.
-Предъявленная дата подачи15.04.2026 используется как дата получения при
-толковании сроков30.04 и15.06; отдельного факта réception дело не содержит.
-Даты не означают удовлетворение просьбы. RAPO — обязательная стадия перед
-судом; CRA — участвующая комиссия. Спор о взыскании во время обжалования
-не решает спор по существу.
+**Which deadlines and duties follow a request to remit an undisputed housing debt?**
 
-`queries/plan.json`: пять запросов — два срока, позиции, AF и приостановление
-взыскания PA600 EUR. `check.py` проверяет ответы и объявленный test twin.
+> Fictional teaching example from an independent Arxo model; not a Cnaf implementation or a legal decision. See the [demonstration limits](../README.md).
+
+## Facts and assumptions
+
+A fictional Fontaine family with three children, €40,000 resources and no age supplements; family allowances are €349.06. This is a separate family from the Garnier file with €425.57 allowances. The supplied request date is 15 April 2026.
+
+Inspect the [dated case files](cases/) and [registered cases](law.toml).
+
+## Run the example
+
+Complete the root [Quick start](../README.md#quick-start) first. From the
+`examples` repository root, run:
 
 ```sh
-python3 check.py --law /absolute/path/to/law
+cd recours-remise-fontaine
+law install --registry arxo=../../arxo-cnaf/registry
+result_dir="$(mktemp -d)"
+law ask . --case FontaineRemise \
+  --query-json queries/FontaineRemise-remise-receipt.json \
+  --out "$result_dir"
+printf 'Saved answer: %s/result.json\n' "$result_dir"
+law test . --json
 ```
 
-**Сцена9.10.2026:** закреплённая модель и полное французское уведомление;
-`law.toml` сохраняет `pinned = true`, ignored lock/deps не тронуты.
-**Локальная реплика11.10.2026, law0.1.12:** пять запросов и test twin прошли;
-отдельная чистая копия снимала `pinned` только в своём манифесте и разрешала
-workspace-зависимости. Это проверка текущих исходников, не тождественный
-replay старого locked bundle. В общем дереве флаг pinned сохранён.
-**Перезакрепление 11.10.2026, law 0.1.12:** локальные `law.lock` и `deps/`
-(Git их игнорирует) перезакреплены `law lock --pin` на текущие исходники
-дерева. У `fr.pf.af` исправлены метки прочтения `ArrondiLignesDss`, у `fr.apl`
-обновлены 19 файлов; остальные пять зависимостей не менялись. Лок корня теперь
-закрепляет исходники дела из Git, включая `sources/crpa/`. `check.py`
-прошёл, ответы пяти запросов совпали с прежним набором. Хэши ответов,
-записанных раньше (сцена 9.10), относятся к прежнему пину. Хэши и порядок
-перелока — `docs/status/2026-10-11-fr-pf-af-arrondi-basis-labels.ru.md`.
+The scenario check should exit with code `0` and report no failed scenarios.
 
-`resources/documents/notification.fr.txt` — демонстрационный документ с
-content_hash. Присоединение не превращает его прозу в adjudicated facts.
-Четыре рубрики CRPA разобраны в уроке13; закреплённый редакционный текст
-R.311-3-1-2 и происхождение — `sources/crpa/`. Этот материал не добавляет
-исполненную CRPA-норму. Юрист-носитель не квалифицировал уведомление как
-готовое к отправке; вербализация без gaps не заменяет этой проверки.
+## Expected answer
+
+`COMPUTED / TRUE_ONLY`: acknowledgement is due by **30 April 2026** under the case’s deadline interpretation.
+
+Open `$result_dir/result.json`: read `results` for the status and follow
+`proofGraph` for the derivation. See [how to read an answer](../README.md#how-to-read-an-answer).
+
+## Try another case
+
+```sh
+law ask . --case FontaineRemise --query-json queries/FontaineRemise-remise-decision.json
+law ask . --case FontaineRemise --query-json queries/FontaineRemise-positions.json
+```
+
+The decision-notification deadline of **15 June 2026** is `TRUE_ONLY`. The [query plan](queries/plan.json) also covers €349.06 family allowances and suspension of €600 activity-bonus recovery.
+
+## Sources and limits
+
+CCH R. 825-3 concerns remission where the basis of the debt is undisputed. The model treats filing on 15 April as receipt when deriving the 15-day and two-month deadlines; no separate receipt fact is supplied. Neither deadline grants remission. RAPO is the required prior stage before court proceedings; CRA is the participating commission. Keep this file’s facts separate from Garnier’s.
+
+Follow the [manual calculation and source references](sources/WITNESS.md).
+
+<details>
+<summary>Calculation details and recorded context</summary>
+
+[notification.fr.txt](resources/documents/notification.fr.txt) is a demonstration
+document attached by content hash. Attachment does not turn its prose into
+adjudicated facts. Chapter 13 discusses the four CRPA explanation headings;
+[source text and provenance](sources/crpa/) accompany the example, but do
+not add an executed CRPA rule. The notification has not been qualified by a
+native-speaking lawyer as ready to send; absence of verbalization gaps does
+not replace that review.
+
+Historical recordings from 9 October 2026 used an earlier pin. On 11 October,
+the author re-pinned the engine-workspace copy on `law` 0.1.12 and checked
+that the five answers were preserved. Those earlier hashes are not hashes
+of the public kit’s current pin. The public guide uses the committed
+`law.lock` and leaves `pinned = true` in the manifest.
+
+</details>
+
+Need help running the commands? See [Troubleshooting](../README.md#troubleshooting).
